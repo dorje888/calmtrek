@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clock, Users, Mountain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import upperMustangImg from '@/assets/upper-mustang.jpg';
@@ -195,10 +196,10 @@ const FeaturedTreks = () => {
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="flex items-center gap-2" asChild>
-                <a href={treks[activeIndex].route}>
+                <Link to={treks[activeIndex].route}>
                   Learn More
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </Button>
               
               <Button variant="outline" asChild>
@@ -240,7 +241,7 @@ const FeaturedTreks = () => {
                   </div>
                   
                   <Button variant="outline" size="sm" className="w-full" asChild>
-                    <a href={trek.route}>View Details</a>
+                    <Link to={trek.route}>View Details</Link>
                   </Button>
                 </div>
               </div>

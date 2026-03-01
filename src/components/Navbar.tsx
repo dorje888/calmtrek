@@ -213,9 +213,36 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group" aria-label="Calm Trek - Home">
-            <img src="/lovable-uploads/3042a073-2741-4abb-a098-23af3d0f755d.png" alt="Calm Trek Logo" className="h-12 w-12 object-contain rounded-lg ring-1 ring-white/20 group-hover:ring-white/40 transition" />
-            {/* Updated full brand name (always visible) */}
-            <div className="flex flex-col">
+            {/* Overflow-hidden tile that crops image edges; image is centered and scaled so inner detail is visible */}
+            <div className={cn(
+              "relative overflow-hidden rounded-md bg-white",
+              // fixed tile size that adapts by breakpoint
+              "w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11",
+              // subtle ring when navbar is transparent to stay visible on dark backgrounds
+              isTransparent ? "ring-1 ring-white/20" : "ring-1 ring-black/5",
+              // drop shadow for contrast
+              "shadow-sm"
+            )}>
+              <img
+                src="/logo.png"
+                alt="Calm Trek Logo"
+                // center and scale the image so outer white is cropped and inner details fill the tile
+                style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%) scale(1.18)',
+                  width: '140%',
+                  height: '140%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  filter: 'contrast(1.05) saturate(1.05)'
+                }}
+              />
+            </div>
+
+            {/* Brand text to the right of the logo, stacked like the screenshot */}
+            <div className="flex flex-col leading-tight">
               <span className={cn(
                 "text-sm md:text-base font-bold tracking-tight transition-colors",
                 isTransparent ? "text-white" : "text-slate-900"
@@ -223,11 +250,11 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
               <span className={cn(
                 "text-[10px] md:text-xs font-medium uppercase tracking-wide transition-colors",
                 isTransparent ? "text-white/80" : "text-slate-600"
-              )}>Trek</span>
+              )}>TREK</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative">
