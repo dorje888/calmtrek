@@ -3,7 +3,7 @@ import { Send, MapPin, Phone, Mail, Calendar, Users, Mountain, Check } from 'luc
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
-const ContactSection = () => {
+const ContactSection: React.FC<{ hideForm?: boolean; landingLayout?: boolean }> = ({ hideForm = false, landingLayout = false }) => {
   const { toast } = useToast();
   const [formState, setFormState] = useState({
     name: '',
@@ -53,7 +53,7 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      details: ["+977 1 4000000", "+977 9800000000"]
+      details: ["+977 1 4000000", "+977 9818129888"]
     },
     {
       icon: <Mail className="h-5 w-5" />,
@@ -68,6 +68,69 @@ const ContactSection = () => {
     "24/7 emergency support during treks",
     "Sustainable and responsible tourism practices"
   ];
+
+  // Small renderer for the three informational cards so we can reuse for landing layout
+  const InfoCards = () => (
+    <>
+      {/* Get in Touch */}
+      <div className="modern-card p-8">
+        <h3 className="text-card-title mb-6">Get in Touch</h3>
+        <div className="space-y-6">
+          {contactInfo.map((info, index) => (
+            <div key={index} className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                {info.icon}
+              </div>
+              <div>
+                <h4 className="font-medium text-foreground mb-1">{info.title}</h4>
+                {info.details.map((detail, i) => (
+                  <p key={i} className="text-muted-foreground">{detail}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Why Choose Us */}
+      <div className="modern-card p-8">
+        <h3 className="text-card-title mb-6">Why Choose TrekFinity</h3>
+        <div className="space-y-4">
+          {features.map((feature, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check className="h-3 w-3 text-primary" />
+              </div>
+              <p className="text-sm text-muted-foreground">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Stats */}
+      <div className="modern-card p-8">
+        <h3 className="text-card-title mb-6">At a Glance</h3>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-1">1000+</div>
+            <div className="text-xs text-muted-foreground">Happy Trekkers</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-1">10+</div>
+            <div className="text-xs text-muted-foreground">Years Experience</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-1">15+</div>
+            <div className="text-xs text-muted-foreground">Trek Routes</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+            <div className="text-xs text-muted-foreground">Support</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <section id="contact" className="section-padding bg-background">
@@ -86,217 +149,165 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
-          {/* Contact Form */}
-          <div className="modern-card p-8">
-            <h3 className="text-card-title mb-6">Send us a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
-                    placeholder="Your name"
-                  />
-                </div>
+        <div className={hideForm && landingLayout ? 'grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto' : 'grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto'}>
+          {hideForm && landingLayout ? (
+            // Landing-only layout: three cards side-by-side on md+ screens
+            <InfoCards />
+          ) : (
+            <>
+              {/* Contact Form */}
+              <div className="modern-card p-8">
+                <h3 className="text-card-title mb-6">Send us a Message</h3>
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formState.phone}
-                    onChange={handleChange}
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="date" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Preferred Date
-                  </label>
-                  <input
-                    type="date"
-                    id="date"
-                    name="date"
-                    value={formState.date}
-                    onChange={handleChange}
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="trek" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Interested Trek
-                  </label>
-                  <select
-                    id="trek"
-                    name="trek"
-                    value={formState.trek}
-                    onChange={handleChange}
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
-                  >
-                    <option value="Everest Base Camp">Everest Base Camp</option>
-                    <option value="Annapurna Circuit">Annapurna Circuit</option>
-                    <option value="Langtang Valley">Langtang Valley</option>
-                    <option value="Manaslu Circuit">Manaslu Circuit</option>
-                    <option value="Upper Mustang">Upper Mustang</option>
-                    <option value="Gokyo Lakes">Gokyo Lakes</option>
-                    <option value="Custom Trek">Custom Trek</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="groupSize" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                    Group Size
-                  </label>
-                  <select
-                    id="groupSize"
-                    name="groupSize"
-                    value={formState.groupSize}
-                    onChange={handleChange}
-                    className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
-                  >
-                    <option value="1">Solo (1 person)</option>
-                    <option value="2">Couple (2 people)</option>
-                    <option value="3-5">Small Group (3-5 people)</option>
-                    <option value="6-10">Medium Group (6-10 people)</option>
-                    <option value="10+">Large Group (10+ people)</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#6F60A1] mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-6 py-4 bg-[#DCD6EB] text-[#4B3F73] rounded-2xl border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70 resize-none"
-                  placeholder="Tell us about your adventure goals, experience level, or any special requirements..."
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full h-11 rounded-full bg-[#7E6DB0] hover:bg-[#6F60A1] text-white"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                    Sending Message...
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Contact Details */}
-            <div className="modern-card p-8">
-              <h3 className="text-card-title mb-6">Get in Touch</h3>
-              
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      {info.icon}
-                    </div>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-medium text-foreground mb-1">{info.title}</h4>
-                      {info.details.map((detail, i) => (
-                        <p key={i} className="text-muted-foreground">{detail}</p>
-                      ))}
+                      <label htmlFor="name" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formState.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
+                        placeholder="your@email.com"
+                      />
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Why Choose Us */}
-            <div className="modern-card p-8">
-              <h3 className="text-card-title mb-6">Why Choose TrekFinity</h3>
-              
-              <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="h-3 w-3 text-primary" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formState.phone}
+                        onChange={handleChange}
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70"
+                        placeholder="+1 (555) 123-4567"
+                      />
                     </div>
-                    <p className="text-sm text-muted-foreground">{feature}</p>
+                    
+                    <div>
+                      <label htmlFor="date" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Preferred Date
+                      </label>
+                      <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={formState.date}
+                        onChange={handleChange}
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
+                      />
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Quick Stats */}
-            <div className="modern-card p-8">
-              <h3 className="text-card-title mb-6">At a Glance</h3>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">1000+</div>
-                  <div className="text-xs text-muted-foreground">Happy Trekkers</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">10+</div>
-                  <div className="text-xs text-muted-foreground">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">15+</div>
-                  <div className="text-xs text-muted-foreground">Trek Routes</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                  <div className="text-xs text-muted-foreground">Support</div>
-                </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="trek" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Interested Trek
+                      </label>
+                      <select
+                        id="trek"
+                        name="trek"
+                        value={formState.trek}
+                        onChange={handleChange}
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
+                      >
+                        <option value="Everest Base Camp">Everest Base Camp</option>
+                        <option value="Annapurna Circuit">Annapurna Circuit</option>
+                        <option value="Langtang Valley">Langtang Valley</option>
+                        <option value="Manaslu Circuit">Manaslu Circuit</option>
+                        <option value="Upper Mustang">Upper Mustang</option>
+                        <option value="Gokyo Lakes">Gokyo Lakes</option>
+                        <option value="Custom Trek">Custom Trek</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="groupSize" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                        Group Size
+                      </label>
+                      <select
+                        id="groupSize"
+                        name="groupSize"
+                        value={formState.groupSize}
+                        onChange={handleChange}
+                        className="w-full px-6 py-3 bg-[#DCD6EB] text-[#4B3F73] rounded-full border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none"
+                      >
+                        <option value="1">Solo (1 person)</option>
+                        <option value="2">Couple (2 people)</option>
+                        <option value="3-5">Small Group (3-5 people)</option>
+                        <option value="6-10">Medium Group (6-10 people)</option>
+                        <option value="10+">Large Group (10+ people)</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-[#6F60A1] mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      rows={4}
+                      className="w-full px-6 py-4 bg-[#DCD6EB] text-[#4B3F73] rounded-2xl border-0 focus:ring-2 focus:ring-[#7E6DB0]/40 focus:outline-none placeholder:text-[#6F60A1]/70 resize-none"
+                      placeholder="Tell us about your adventure goals, experience level, or any special requirements..."
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full h-11 rounded-full bg-[#7E6DB0] hover:bg-[#6F60A1] text-white"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
+                        Sending Message...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4 mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
               </div>
-            </div>
-          </div>
+
+              {/* Contact Information (stacked for default pages) */}
+              <div className="space-y-8">
+                <InfoCards />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

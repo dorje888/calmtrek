@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ReviewForm from '@/components/reviews/ReviewForm';
 import ReviewList from '@/components/reviews/ReviewList';
 
-const TestimonialsSection = () => {
+const TestimonialsSection: React.FC<{ showReviews?: boolean; autoplay?: boolean }> = ({ showReviews = true, autoplay = false }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
     {
@@ -46,6 +47,17 @@ const TestimonialsSection = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!autoplay) return;
+    if (isPaused) return;
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000); // 5s per slide
+
+    return () => window.clearInterval(timer);
+  }, [autoplay, isPaused, testimonials.length]);
+
   const handlePrev = () => {
     setActiveIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
   };
@@ -73,7 +85,7 @@ const TestimonialsSection = () => {
 
         {/* Featured Testimonial */}
         <div className="max-w-5xl mx-auto">
-          <div className="modern-card overflow-hidden">
+          <div className="modern-card overflow-hidden" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Image */}
               <div className="lg:order-1">
@@ -157,21 +169,25 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Community Reviews: dynamic list + submission form */}
-        <div className="mt-24">
-          <h3 className="text-card-title text-center mb-12">Community Reviews</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <ReviewList />
-            </div>
-            <div>
-              <div className="modern-card p-6">
-                <ReviewForm />
-                <p className="mt-2 text-xs text-muted-foreground">Email is required to submit. Reviews appear after admin approval.</p>
+        {showReviews && (
+          <>
+            {/* Community Reviews: dynamic list + submission form */}
+            <div className="mt-24">
+              <h3 className="text-card-title text-center mb-12">Community Reviews</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <ReviewList />
+                </div>
+                <div>
+                  <div className="modern-card p-6">
+                    <ReviewForm />
+                    <p className="mt-2 text-xs text-muted-foreground">Email is required to submit. Reviews appear after admin approval.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
 
         {/* All Testimonials Grid (featured quick nav) */}
         <div className="mt-24">

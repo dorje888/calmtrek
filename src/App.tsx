@@ -12,6 +12,7 @@ import TestimonialsPage from "./pages/TestimonialsPage";
 import Contact from "./pages/Contact";
 import Registration from "./pages/Registration";
 import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 // Trek Pages
 import EverestBaseCamp from "./pages/treks/EverestBaseCamp";
@@ -171,6 +172,8 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* WhatsApp floating button available on all pages */}
+        <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

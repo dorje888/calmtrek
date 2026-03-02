@@ -16,8 +16,8 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <FeaturedTreks />
-      <TestimonialsSection />
-      <ContactSection />
+      <TestimonialsSection showReviews={false} autoplay />
+      <ContactSection hideForm landingLayout />
 
       {/* Ready for your adventure CTA */}
       <section className="relative my-8">

@@ -123,8 +123,8 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
-                    <div>+977 1 4000000</div>
-                    <div>+977 9800000000</div>
+                    <div>+977 9818129888</div>
+                    <div>+977 9818129888</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -222,8 +222,8 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
-                    <div>+977 1 4000000</div>
-                    <div>+977 9800000000</div>
+                    <div>+977 9818129888</div>
+                    <div>+977 9818129888</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
