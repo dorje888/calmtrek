@@ -2,10 +2,16 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import SeoMeta from '@/components/SeoMeta';
 
 const TestimonialsPage = () => {
+  const title = "Trekking Reviews in Nepal | Calm Trek Nepal Testimonials";
+  const description =
+    "Read real trekking reviews from travelers who explored Nepal with Calm Trek Nepal. See experiences from Everest, Annapurna, Langtang and more—and leave your own review.";
+
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       <div className="pt-24 md:pt-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

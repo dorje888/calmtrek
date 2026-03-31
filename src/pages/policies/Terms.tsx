@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SeoMeta from '@/components/SeoMeta';
 
 const Terms = () => (
   <div className="min-h-screen bg-gray-50">
+    <SeoMeta
+      title="Terms of Service | Calm Trek Nepal"
+      description="Read the terms of service for Calm Trek Nepal, including booking conditions and guidelines for trekking in Nepal tours."
+    />
+
     <section className="border-b bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav className="text-sm text-gray-500 mb-4">

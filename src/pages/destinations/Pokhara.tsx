@@ -9,9 +9,15 @@ import type { AttractionRow } from '@/lib/data/destinationApi';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import SeoMeta from '@/components/SeoMeta';
 
 const Pokhara = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
+  
+  const title = 'Pokhara, Nepal | Lakeside City & Annapurna Trek Gateway | Calm Trek Nepal';
+  const description =
+    'Discover Pokhara—Nepal’s adventure hub and the gateway to Annapurna trekking routes like ABC and Mardi Himal. Explore Phewa Lake, sunrise viewpoints, paragliding, and the best things to do before or after your trek.';
+
   // const pokharaHeroSrc = `/Pokhara/kaushal-subedi-zRWq-7SWVSU-unsplash.jpg${bust}`;
 
   const [subtitle, setSubtitle] = useState(
@@ -69,6 +75,7 @@ const Pokhara = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       
       {/* Hero - slide like Kathmandu */}

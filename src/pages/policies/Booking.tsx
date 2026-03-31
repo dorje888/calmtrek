@@ -1,8 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SeoMeta from '@/components/SeoMeta';
 
 const Booking = () => (
   <div className="min-h-screen bg-gray-50">
+    <SeoMeta
+      title="Booking Policy | Calm Trek Nepal"
+      description="Review Calm Trek Nepal’s booking policy for trekking in Nepal, including deposits, payments, confirmations, and trip changes."
+    />
+
     <section className="border-b bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav className="text-sm text-gray-500 mb-4">

@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SeoMeta from '@/components/SeoMeta';
 
 const AnnapurnaBaseCamp = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
@@ -50,6 +51,11 @@ const AnnapurnaBaseCamp = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Annapurna Base Camp trek | Calm Trek Nepal — ABC 10–12 days"
+        description="Annapurna Base Camp Trek: classic journey into the Annapurna Sanctuary with close-up views of Annapurna I, Machhapuchhre and Rhododendron forests. Best in Mar–May & Sep–Nov."
+        url="https://calmtrek.com/treks/annapurna-base-camp"
+      />
       <Navbar />
       <div className="pt-20">
         {/* Hero */}

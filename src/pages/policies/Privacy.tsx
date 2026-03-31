@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SeoMeta from '@/components/SeoMeta';
 
 const Privacy = () => (
   <div className="min-h-screen bg-gray-50">
+    <SeoMeta
+      title="Privacy Policy | Calm Trek Nepal"
+      description="Read Calm Trek Nepal’s privacy policy explaining how we collect, use, and protect your information when you inquire about or book trekking in Nepal tours."
+    />
     {/* Hero */}
     <section className="border-b bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">

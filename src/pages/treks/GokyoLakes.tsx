@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const GokyoLakes = () => {
   const heroUrl = new URL('../../assets/gokyo-lakes.jpg', import.meta.url).href;
@@ -11,7 +13,7 @@ const GokyoLakes = () => {
   // SEO: title, description, keywords, JSON-LD
   React.useEffect(() => {
     const title = 'Gokyo Lakes Trek (via Gokyo Ri) + Variant via Cho La Pass | TrekFinity';
-    const description = 'Gokyo Lakes Trek: quieter Everest region route to turquoise high-altitude lakes and Gokyo Ri (5,357 m) panorama of Everest, Cho Oyu and Makalu. Optional circuit via Cho La Pass linking Gokyo with EBC. Best in Mar–May & Sep–Nov.';
+    const description = 'Gokyo Lakes Trek: quieter Everest region route to turquoise high-altitude lakes and Gokyo Ri (5,357 m) panorama of Everest, Cho Oyu and Makalu.';
     const keywords = 'Gokyo Lakes Trek Nepal, Gokyo Ri view Everest, EBC via Cho La Pass Trek, less crowded Everest region trek, Gokyo Lakes trek cost 2025, trekking Gokyo valley glaciers';
 
     document.title = title;
@@ -68,6 +70,11 @@ const GokyoLakes = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Gokyo Lakes trek | Calm Trek Nepal — quieter Everest region route"
+        description="Gokyo Lakes Trek: pristine turquoise lakes, Gokyo Ri panorama and an alternative, less-crowded Everest region experience guided by our Nepal trekking company." 
+        url="https://calmtrek.com/treks/gokyo-lakes"
+      />
       <Navbar />
       
       {/* Hero Section */}
@@ -90,6 +97,14 @@ const GokyoLakes = () => {
           </div>
         </div>
       </section>
+
+      {/* SEO Intro for crawlers and users */}
+      <SeoIntro
+        sections={[
+          { heading: 'Discover quieter trekking in Nepal', text: 'Gokyo Lakes offers a less crowded Everest region experience with turquoise lakes, glacier views and panoramic summits—perfect for trekkers seeking solitude and dramatic scenery.' },
+          { heading: 'Best time for the Gokyo Lakes trek', text: 'March–May and September–November provide the clearest skies and stable weather for trekking in Nepal’s high valleys.' },
+        ]}
+      />
 
       {/* Overview Section */}
       <section className="py-20 bg-background">

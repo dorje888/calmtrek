@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const ManasluCircuit = () => {
   // Dev cache buster and hero images (served from public/Manaslu)
@@ -101,9 +103,21 @@ const ManasluCircuit = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Manaslu Circuit trek | Calm Trek Nepal — remote Larkya La adventure"
+        description="Manaslu Circuit Trek: challenging, less-crowded Himalayan circuit via Larkya La with remote villages, Tibetan-influenced culture and dramatic mountain scenery." 
+        url="https://calmtrek.com/treks/manaslu-circuit"
+      />
       <Navbar />
       
       <div className="pt-20">
+        <SeoIntro
+          sections={[
+            { heading: 'Manaslu Circuit overview', text: 'The Manaslu Circuit trek is a challenging, less-crowded Himalayan route requiring restricted area permits. It rewards trekkers with remote landscapes, cultural encounters and the Larkya La pass.' },
+            { heading: 'Who should attempt Manaslu?', text: 'Experienced trekkers seeking a remote Nepal trekking experience with good fitness and proper acclimatization plans.' },
+          ]}
+        />
+
         {/* Hero Section - auto sliding images */}
         <div className="relative h-[70vh] overflow-hidden">
           {/* Carousel Underlay */}

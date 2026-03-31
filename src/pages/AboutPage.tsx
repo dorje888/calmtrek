@@ -6,6 +6,8 @@ import { Facebook, Instagram } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import ReviewForm from '@/components/reviews/ReviewForm';
 import ReviewList from '@/components/reviews/ReviewList';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const AboutPage = () => {
   // SEO meta for About page
@@ -22,7 +24,13 @@ const AboutPage = () => {
 
   // Use absolute public paths to avoid BASE_URL issues
   const missionImages = [
+    '/mission/Screenshot_20251118_120948.png',
+    '/mission/Screenshot_20251130_135311.png',
     '/mission/Screenshot_20251130_135443.png',
+    '/mission/Screenshot_20251130_135813.png',
+    '/mission/Screenshot_20251130_140121.png',
+    '/mission/Screenshot_20251202_064106.png',
+    '/mission/Screenshot_20251202_065221.png',
     '/mission/Screenshot_20251202_065258.png',
   ];
   const placeholderSrc = '/placeholder.svg';
@@ -95,6 +103,11 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="About Calm Trek — Licensed Nepal trekking company"
+        description="Calm Trek is a licensed Nepal trekking company delivering Everest Base Camp, Annapurna and custom Himalayan treks with experienced local guides and responsible practices."
+        url="https://calmtrek.com/about"
+      />
       <Navbar />
       <div className="pt-24 md:pt-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,6 +116,25 @@ const AboutPage = () => {
             <p className="text-lg text-gray-600">
               Calm Trek is a licensed Nepal trekking &amp; Himalayan expedition company delivering safe, culturally immersive adventures across Everest, Annapurna, Manaslu, Langtang, Mustang, Dolpo &amp; Kanchenjunga regions.
             </p>
+          </div>
+
+          {/* Key points (moved inside About header section) */}
+          <div className="max-w-4xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+            <div className="relative pl-5">
+              <div className="absolute left-0 top-1 h-full w-1 rounded-full bg-primary/70" aria-hidden="true" />
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Licensed Nepal trekking company</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Calm Trek is a licensed Nepal trekking company committed to safe, well-supported treks including Everest Base Camp and Annapurna routes.
+              </p>
+            </div>
+
+            <div className="relative pl-5">
+              <div className="absolute left-0 top-1 h-full w-1 rounded-full bg-primary/70" aria-hidden="true" />
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Local expertise and responsible travel</h2>
+              <p className="text-gray-600 leading-relaxed">
+                Our guides are locally sourced, licensed and trained in first aid and high-altitude safety. We work closely with communities to support responsible tourism.
+              </p>
+            </div>
           </div>
         </div>
         <AboutSection />
@@ -209,23 +241,72 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 bg-gray-50">
+        {/* Why Trek With Calm Trek */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <span className="inline-block py-1 px-3 mb-4 text-xs font-medium tracking-wider uppercase bg-nature-100 text-nature-800 rounded-full">
-                Testimonials
+                Why Calm Trek
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Visitors Say</h2>
-              <p className="text-lg text-gray-600">Read recent reviews and share your experience with Calm Trek.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">A different kind of trekking company</h2>
+              <p className="text-lg text-gray-600">
+                We keep things simple: strong planning, honest guidance, and a supportive team on the trail—so your trekking in Nepal trip feels calm, safe and memorable.
+              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <ReviewList />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Acclimatization-first itineraries</h3>
+                <p className="text-gray-600">Built-in rest days, flexible pacing and altitude awareness—especially for Everest and Annapurna routes.</p>
               </div>
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Local, licensed leadership</h3>
+                <p className="text-gray-600">Government-licensed guides with first-aid training, route knowledge and cultural context.</p>
+              </div>
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Transparent trip support</h3>
+                <p className="text-gray-600">Clear inclusions, permit guidance, packing help, and pre-trek briefings—no surprises.</p>
+              </div>
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Comfortable logistics</h3>
+                <p className="text-gray-600">We choose reliable teahouses, arrange transport carefully, and prioritize warm, safe stays.</p>
+              </div>
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Small groups, real connection</h3>
+                <p className="text-gray-600">Better trail experience, better photographs, and more time to enjoy villages and viewpoints.</p>
+              </div>
+              <div className="bg-white border rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Responsible travel mindset</h3>
+                <p className="text-gray-600">Fair wages, local sourcing, and respect for mountain communities and sacred sites.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Safety & Ethics Promise */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div>
-                <ReviewForm />
-                <p className="mt-2 text-xs text-gray-500">Email is required to submit. Reviews are published after admin approval.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Safety &amp; Ethics Promise</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  The Himalayas are beautiful—but they demand respect. Our promise is simple: we plan responsibly, we communicate clearly, and we look after people first.
+                </p>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" /><span><strong>Safety systems:</strong> acclimatization planning, weather checks, route monitoring, and emergency readiness.</span></li>
+                  <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" /><span><strong>Ethical staffing:</strong> fair porter/guides practices, proper gear, and humane loads.</span></li>
+                  <li className="flex gap-3"><span className="mt-2 h-2 w-2 rounded-full bg-primary shrink-0" /><span><strong>Responsible operations:</strong> respect local culture, minimize waste, and support local businesses.</span></li>
+                </ul>
+              </div>
+              <div className="rounded-2xl border bg-gray-50 p-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Planning a trek?</h3>
+                <p className="text-gray-600 mb-6">Tell us your dates, fitness level and preferred region—we’ll suggest the right route and a calm, realistic itinerary.</p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors"
+                >
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>

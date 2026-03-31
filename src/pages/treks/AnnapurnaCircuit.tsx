@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const AnnapurnaCircuit = () => {
   // Dev cache buster
@@ -24,7 +26,7 @@ const AnnapurnaCircuit = () => {
   // SEO: title, description, keywords
   React.useEffect(() => {
     const title = 'Annapurna Circuit Trek | Classic Annapurna Circuit 14–18 Days | TrekFinity';
-    const description = 'Annapurna Circuit Trek: classic trans‑Himalayan route offering dramatic landscapes, Thorong La pass (5,416 m), diverse cultures and remote valleys. Typical 14–18 days, moderate to challenging.';
+    const description = 'Annapurna Circuit Trek: classic trans‑Himalayan route offering dramatic landscapes, Thorong La pass (5,416 m), diverse cultures and remote valleys.';
     const keywords = 'Annapurna Circuit trek, Thorong La pass, Annapurna trekking itinerary, Annapurna circuit cost, Nepal circuit trek 2025';
     document.title = title;
     const setMeta = (name: string, content: string) => {
@@ -42,6 +44,11 @@ const AnnapurnaCircuit = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Annapurna Circuit trek | Calm Trek Nepal — Thorong La 14–18 days"
+        description="Annapurna Circuit: trans‑Himalayan adventure crossing Thorong La. Diverse cultures, high passes and dramatic scenery guided by an experienced Nepal trekking company."
+        url="https://calmtrek.com/treks/annapurna-circuit"
+      />
       <Navbar />
       <div className="pt-20">
         {/* Hero */}
@@ -69,6 +76,14 @@ const AnnapurnaCircuit = () => {
             </div>
           </div>
         </div>
+
+        {/* SEO Intro */}
+        <SeoIntro
+          sections={[
+            { heading: 'Why trek the Annapurna Circuit?', text: 'The Annapurna Circuit is a top Nepal trekking route offering cultural variety, dramatic mountain transitions and the iconic Thorong La pass—perfect for adventurous trekkers.' },
+            { heading: 'Who is it for?', text: 'This Nepal trekking company recommends the circuit for trekkers with moderate fitness looking for a mix of culture, scenery and high alpine experience.' },
+          ]}
+        />
 
         {/* Overview + Details (match ABC layout) */}
         <section className="py-16">

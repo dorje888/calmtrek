@@ -27,7 +27,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/yoganepalmountaintrek/?utm_source=ig_web_button_share_sheet' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/calmtrek/?utm_source=ig_web_button_share_sheet' },
     { name: 'Twitter', icon: Twitter, href: '#' },
   ];
 
@@ -43,8 +43,8 @@ const Footer = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img 
-                  src="/lovable-uploads/3042a073-2741-4abb-a098-23af3d0f755d.png" 
-                  alt="Calm Trek Logo" 
+                  src="/logo.png" 
+                  alt="Calm Trek Nepal Logo" 
                   className="h-10 w-10 object-contain"
                 />
                 <span className="text-base font-bold leading-tight break-words">
@@ -130,8 +130,8 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
-                    <div>info@yoganepaltreks.com</div>
-                    <div>bookings@yoganepaltreks.com</div>
+                    <div>info@calmtreknepal.com</div>
+                    <div>bookings@calmtreknepal.com</div>
                   </div>
                 </div>
               </div>
@@ -144,8 +144,8 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <div className="flex items-center gap-3 mb-6">
                 <img 
-                  src="/lovable-uploads/3042a073-2741-4abb-a098-23af3d0f755d.png" 
-                  alt="Calm Trek Logo" 
+                  src="/logo.png" 
+                  alt="Calm Trek Nepal Logo" 
                   className="h-10 w-10 object-contain"
                 />
                 <span className="text-lg font-bold leading-tight">
@@ -229,8 +229,8 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
-                    <div>info@yoganepaltreks.com</div>
-                    <div>bookings@yoganepaltreks.com</div>
+                    <div>info@calmtreknepal.com</div>
+                    <div>bookings@calmtreknepal.com</div>
                   </div>
                 </div>
               </div>

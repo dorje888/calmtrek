@@ -5,10 +5,15 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import React, { useEffect, useRef } from "react";
+import SeoMeta from '@/components/SeoMeta';
 
 const API_BASE = import.meta.env.VITE_API_BASE || ""; // empty means same origin
 
 const Registration = () => {
+  const title = 'Register Interest | Book Trekking in Nepal with Local Guides | Calm Trek Nepal';
+  const description =
+    'Register your interest to book trekking in Nepal with Calm Trek Nepal. Tell us your preferred trek, dates, and group size—our local team will reply with an itinerary and quote.';
+
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [agreed, setAgreed] = useState(false);
@@ -108,6 +113,7 @@ const Registration = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       
       {/* Top spacing consistent with other pages */}

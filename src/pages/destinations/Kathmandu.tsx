@@ -9,9 +9,14 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Mountain, Wind, CloudLightning, Sunrise, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SeoMeta from '@/components/SeoMeta';
 
 const Kathmandu = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
+
+  const title = 'Kathmandu, Nepal | Temples, Culture & Gateway for Trekking in Nepal | Calm Trek Nepal';
+  const description =
+    'Explore Kathmandu, Nepal—the cultural heart and the main gateway for trekking in Nepal. Discover UNESCO temples, local markets, day tours, and essential travel tips before heading to Everest, Annapurna, Langtang and more.';
 
   // Hero images served from public/Kathmandu
   const kathmanduImages = [
@@ -59,6 +64,7 @@ const Kathmandu = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
 
       {/* Hero */}

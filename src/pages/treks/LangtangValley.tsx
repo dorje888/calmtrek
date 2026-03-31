@@ -4,6 +4,8 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const LangtangValley = () => {
   // Dev cache buster and hero images (served from public/Langtang)
@@ -20,94 +22,24 @@ const LangtangValley = () => {
     return () => clearInterval(id);
   }, [api]);
 
-  // SEO: title, description, keywords, Open Graph/Twitter, canonical, JSON-LD
-  React.useEffect(() => {
-    const title = 'Langtang Valley Trek | Tamang Culture, Rhododendrons & Glaciers (8 Days) | TrekFinity';
-    const description = 'Langtang Valley Trek is a moderate, beginner-friendly trek close to Kathmandu. Experience Tamang culture, rhododendron forests, Kyanjin Gompa, and viewpoints like Tserko Ri. 8 days, best in Mar–May and Sep–Nov. Permits: Langtang NP + TIMS.';
-    const keywords = 'Langtang Valley Trek Nepal, beginner friendly trek, Tamang culture trek, Kyanjin Gompa, Tserko Ri 4984m, Langtang permits TIMS, rhododendron spring trek, Kathmandu short trek 2025 itinerary';
-
-    document.title = title;
-    const ensure = (sel: string, create: () => HTMLElement) => {
-      let el = document.querySelector(sel) as HTMLElement | null;
-      if (!el) { el = create(); document.head.appendChild(el); }
-      return el;
-    };
-    const setMeta = (name: string, content: string) => {
-      const m = ensure(`meta[name="${name}"]`, () => { const x = document.createElement('meta'); x.setAttribute('name', name); return x; });
-      m.setAttribute('content', content);
-    };
-    setMeta('description', description);
-    setMeta('keywords', keywords);
-
-    const setOg = (property: string, content: string) => {
-      const m = ensure(`meta[property="${property}"]`, () => { const x = document.createElement('meta'); x.setAttribute('property', property); return x; });
-      m.setAttribute('content', content);
-    };
-    const url = window.location.href;
-    const ogImage = `${window.location.origin}/og-image.png`;
-    setOg('og:title', title);
-    setOg('og:description', description);
-    setOg('og:type', 'website');
-    setOg('og:url', url);
-    setOg('og:image', ogImage);
-    setMeta('twitter:card', 'summary_large_image');
-    setMeta('twitter:title', title);
-    setMeta('twitter:description', description);
-    setMeta('twitter:image', ogImage);
-
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) { link = document.createElement('link'); link.setAttribute('rel', 'canonical'); document.head.appendChild(link); }
-    link.setAttribute('href', url);
-
-    const id = 'ld-trip-langtang';
-    const prev = document.getElementById(id);
-    if (prev) prev.remove();
-    const script = document.createElement('script');
-    script.id = id;
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'TouristTrip',
-      name: 'Langtang Valley Trek',
-      description,
-      touristType: 'First-time trekkers with average fitness; culture & nature enthusiasts',
-      areaServed: { '@type': 'AdministrativeArea', name: 'Langtang National Park, Nepal' },
-      itinerary: {
-        '@type': 'ItemList',
-        numberOfItems: 8,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Drive Kathmandu → Syabrubesi (1,550 m)' },
-          { '@type': 'ListItem', position: 2, name: 'Syabrubesi → Lama Hotel (2,380 m)' },
-          { '@type': 'ListItem', position: 3, name: 'Lama Hotel → Langtang Village (3,430 m)' },
-          { '@type': 'ListItem', position: 4, name: 'Langtang Village → Kyanjin Gompa (3,870 m)' },
-          { '@type': 'ListItem', position: 5, name: 'Hike to Kyanjin Ri or Tserko Ri (4,773–4,984 m) and return' },
-          { '@type': 'ListItem', position: 6, name: 'Kyanjin Gompa → Lama Hotel (2,380 m)' },
-          { '@type': 'ListItem', position: 7, name: 'Lama Hotel → Syabrubesi (1,550 m)' },
-          { '@type': 'ListItem', position: 8, name: 'Drive to Kathmandu (1,400 m)' }
-        ]
-      },
-      offers: { '@type': 'Offer', priceCurrency: 'USD', price: '1200', availability: 'https://schema.org/InStock' },
-      provider: { '@type': 'Organization', name: 'TrekFinity' }
-    });
-    document.head.appendChild(script);
-    return () => { const s = document.getElementById(id); if (s) s.remove(); };
-  }, []);
+  const title = 'Langtang Valley Trek | Best Beginner Trekking in Nepal (8 Days) | Calm Trek Nepal';
+  const description =
+    'Langtang Valley Trek is a scenic, beginner-friendly trek close to Kathmandu. Enjoy Tamang culture, rhododendron forests, Kyanjin Gompa and Tserko Ri viewpoints on an 8-day teahouse itinerary.';
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
-      
       <div className="pt-20">
-        {/* Hero Section - auto sliding images */}
-        <div className="relative h-[70vh] overflow-hidden">
-          {/* Carousel Underlay */}
+        {/* Hero */}
+        <div className="relative h-[55vh] overflow-hidden" role="img" aria-label="Langtang Valley panorama">
           <Carousel className="absolute inset-0 z-0" opts={{ loop: true }} setApi={setApi}>
             <CarouselContent className="h-full">
               {langtangImages.map((src, idx) => (
-                <CarouselItem key={idx} className="h-[70vh] relative">
+                <CarouselItem key={idx} className="h-[55vh] relative">
                   <img
                     src={src}
-                    alt={`Langtang gallery image ${idx + 1}`}
+                    alt={`Langtang Valley hero ${idx + 1}`}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading={idx === 0 ? 'eager' : 'lazy'}
                   />
@@ -117,22 +49,35 @@ const LangtangValley = () => {
             </CarouselContent>
           </Carousel>
 
-          {/* Content overlay */}
-          <div className="absolute inset-0 z-20 flex items-center justify-center">
-            <div className="text-center text-white max-w-4xl px-4">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Langtang Valley Trek</h1>
-              <p className="text-xl md:text-2xl mb-8">Discover Tamang culture, rhododendrons and glacier valleys near Kathmandu</p>
-              <Link 
-                to="#book-now" 
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-premium text-lg"
-              >
-                Book This Trek
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <div className="text-center text-white max-w-3xl px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Langtang Valley Trek</h1>
+              <p className="text-lg md:text-xl">A close-to-Kathmandu Himalayan trek with culture, forests, and glacier views (8 days)</p>
+              <div className="mt-6">
+                <Link
+                  to="#booking"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition"
+                >
+                  Book This Trek <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        
+
+        <SeoIntro
+          title="Langtang Valley Trekking in Nepal"
+          sections={[
+            {
+              heading: 'Why choose the Langtang Valley Trek',
+              text: "Langtang Valley Trek is one of the best short Himalayan adventures for trekking in Nepal, especially if you want big mountain scenery without long travel days. The trail begins a few hours from Kathmandu and quickly enters Langtang National Park with forests, rivers, and traditional Tamang villages.",
+            },
+            {
+              heading: 'Kyanjin Gompa & viewpoint hikes',
+              text: 'Most trekkers finish at Kyanjin Gompa, with optional hikes to Kyanjin Ri and Tserko Ri for panoramic views. This teahouse trek is a strong choice for first-time trekkers looking for an authentic cultural experience and a manageable itinerary.',
+            },
+          ]}
+        />
         {/* Overview Section */}
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">

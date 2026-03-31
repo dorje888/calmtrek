@@ -4,12 +4,17 @@ import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
+import SeoMeta from '@/components/SeoMeta';
 
 const PikeyPeak = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
   const heroImages = [
     '/Everest/success-dhamala-5MYcazoWGLI-unsplash.jpg',
   ].map((p) => `${p}${bust}`);
+
+  const title = 'Pikey Peak Trek (4,065m) | Best Short Trekking in Nepal (6–9 Days) | Calm Trek Nepal';
+  const description =
+    'Pikey Peak Trek is one of the best short treks in Nepal for Everest sunrise views. Walk through Sherpa villages and rhododendron forests with a flexible 6–9 day itinerary from Kathmandu.';
 
   const [api, setApi] = React.useState<CarouselApi | null>(null);
   React.useEffect(() => {
@@ -18,22 +23,9 @@ const PikeyPeak = () => {
     return () => clearInterval(id);
   }, [api]);
 
-  React.useEffect(() => {
-    const title = 'Pikey Peak Trek (4,065 m) — Sunrise Panorama | TrekFinity';
-    const description = 'Pikey Peak Trek: achievable 6–9 day trek offering dramatic sunrise views of Everest, Numbur and Kanchenjunga; ideal for photographers and short-experience trekkers.';
-    const keywords = 'Pikey Peak trek, Pikey Peak sunrise, short trek Everest region, Nepal short treks';
-    document.title = title;
-    const setMeta = (name: string, content: string) => {
-      let m = document.querySelector(`meta[name="${name}"]`);
-      if (!m) { m = document.createElement('meta'); m.setAttribute('name', name); document.head.appendChild(m); }
-      m.setAttribute('content', content);
-    };
-    setMeta('description', description);
-    setMeta('keywords', keywords);
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       <div className="pt-20">
         {/* Hero */}
@@ -42,7 +34,12 @@ const PikeyPeak = () => {
             <CarouselContent className="h-full">
               {heroImages.map((src, idx) => (
                 <CarouselItem key={idx} className="h-[55vh] relative">
-                  <img src={src} alt={`Pikey Peak hero ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover" loading={idx === 0 ? 'eager' : 'lazy'} />
+                  <img
+                    src={src}
+                    alt={`Pikey Peak hero ${idx + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading={idx === 0 ? 'eager' : 'lazy'}
+                  />
                   <div className="absolute inset-0 bg-black/30" />
                 </CarouselItem>
               ))}
@@ -52,9 +49,14 @@ const PikeyPeak = () => {
           <div className="absolute inset-0 z-10 flex items-center justify-center">
             <div className="text-center text-white max-w-3xl px-4">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Pikey Peak Trek</h1>
-              <p className="text-lg md:text-xl">A short Khumbu sunrise trek with panoramic views of Everest and surrounding peaks (6–9 days)</p>
+              <p className="text-lg md:text-xl">
+                A short Khumbu sunrise trek with panoramic views of Everest and surrounding peaks (6–9 days)
+              </p>
               <div className="mt-6">
-                <Link to="#booking" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition">
+                <Link
+                  to="#booking"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition"
+                >
                   Book This Trek <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -68,13 +70,32 @@ const PikeyPeak = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
                 <h2 className="text-3xl font-bold text-foreground mb-6">Overview</h2>
-                <p className="text-lg text-muted-foreground mb-6">Pikey Peak (4,065 m) is a fantastic short trek in the lower Khumbu that rewards early-morning hikers with expansive sunrise panoramas including Everest, Numbur and distant Kanchenjunga. The route passes through Sherpa villages, rhododendron forests and comfortable teahouses.</p>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Pikey Peak (4,065 m) is a fantastic short trek in the lower Khumbu that rewards early-morning hikers with
+                  expansive sunrise panoramas including Everest, Numbur and distant Kanchenjunga. The route passes through
+                  Sherpa villages, rhododendron forests and comfortable teahouses.
+                </p>
 
                 <h3 className="text-2xl font-bold mt-8 mb-4">Highlights</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  <li className="flex items-start gap-3"><div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-mountain-700"></div></div><span className="text-muted-foreground">Spectacular sunrise views over Everest and surrounding peaks</span></li>
-                  <li className="flex items-start gap-3"><div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-mountain-700"></div></div><span className="text-muted-foreground">Short, accessible itinerary ideal for photographers & families</span></li>
-                  <li className="flex items-start gap-3"><div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-mountain-700"></div></div><span className="text-muted-foreground">Cultural experiences in Sherpa villages</span></li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-mountain-700"></div>
+                    </div>
+                    <span className="text-muted-foreground">Spectacular sunrise views over Everest and surrounding peaks</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-mountain-700"></div>
+                    </div>
+                    <span className="text-muted-foreground">Short, accessible itinerary ideal for photographers & families</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="mt-1 w-5 h-5 rounded-full bg-mountain-100 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-mountain-700"></div>
+                    </div>
+                    <span className="text-muted-foreground">Cultural experiences in Sherpa villages</span>
+                  </li>
                 </ul>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

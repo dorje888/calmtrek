@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, Users, Mountain } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Users, Mountain, Star, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import upperMustangImg from '@/assets/upper-mustang.jpg';
 import gokyoImg from '@/assets/gokyo-lakes.jpg';
@@ -18,7 +18,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Everest page
       image: `/Everest/geetangey-ra4NJidcK1A-unsplash.jpg${bust}`,
       description:
-        "Walk in the footsteps of legends to the base of the world's highest peak at 5,364m. Experience breathtaking mountain vistas, visit centuries-old monasteries, and immerse yourself in authentic Sherpa culture. This iconic trek passes through Sagarmatha National Park, a UNESCO World Heritage site, offering unparalleled views of Everest, Lhotse, Nuptse, and Ama Dablam.",
+        "Walk in the footsteps of legends to the base of the world's highest peak at 5,364m. Experience breathtaking mountain vistas, visit centuries-old monasteries, and immerse yourself in authentic Sherpa culture.",
       duration: '14 days',
       difficulty: 'Challenging',
       groupSize: '2-12',
@@ -27,6 +27,12 @@ const FeaturedTreks = () => {
       highlights: ['Namche Bazaar - Sherpa capital', 'Tengboche Monastery', 'Kala Patthar viewpoint', 'Everest Base Camp'],
       bestSeason: 'March-May, September-November',
       fallback: '/placeholder.svg',
+      price: 1150,
+      oldPrice: 1199,
+      currency: 'US$',
+      rating: 5.0,
+      reviews: 3,
+      badge: 'Best Selling Trip'
     },
     {
       id: 2,
@@ -34,7 +40,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Annapurna page
       image: `/Annapurna/francesca-varisco-r7IBk3kt5hc-unsplash.jpg${bust}`,
       description:
-        "Journey through Nepal's most diverse trekking route, crossing the dramatic Thorong La Pass at 5,416m. Experience everything from subtropical forests and terraced fields to arid high-altitude deserts and glacial valleys. This classic trek offers stunning views of Annapurna, Dhaulagiri, Machapuchare, and Manaslu ranges while passing through traditional Gurung and Thakali villages.",
+        "Journey through Nepal's most diverse trekking route, crossing the dramatic Thorong La Pass at 5,416m.",
       duration: '18 days',
       difficulty: 'Moderate to Challenging',
       groupSize: '2-10',
@@ -43,6 +49,12 @@ const FeaturedTreks = () => {
       highlights: ['Thorong La Pass', 'Muktinath Temple', 'Manang village', 'Diverse ecosystems'],
       bestSeason: 'March-May, September-November',
       fallback: '/placeholder.svg',
+      price: 650,
+      oldPrice: 750,
+      currency: 'US$',
+      rating: 4.9,
+      reviews: 12,
+      badge: null
     },
     {
       id: 3,
@@ -50,7 +62,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Langtang page
       image: `/Langtang/himalayan-local-guide-xc2GggytytA-unsplash.jpg${bust}`,
       description:
-        "Discover the 'Valley of Glaciers' with its unique blend of Himalayan and Tibetan cultures. Trek through Langtang National Park, home to red pandas and diverse flora including rhododendron forests. Experience traditional Tamang villages, visit ancient monasteries, and enjoy close-up views of Langtang Lirung (7,227m) and other spectacular peaks.",
+        "Discover the 'Valley of Glaciers' with its unique blend of Himalayan and Tibetan cultures.",
       duration: '10 days',
       difficulty: 'Moderate',
       groupSize: '2-8',
@@ -59,6 +71,12 @@ const FeaturedTreks = () => {
       highlights: ['Kyanjin Gompa monastery', 'Langtang Lirung views', 'Tamang culture', 'Red panda habitat'],
       bestSeason: 'March-May, September-November',
       fallback: '/placeholder.svg',
+      price: 580,
+      oldPrice: 650,
+      currency: 'US$',
+      rating: 5.0,
+      reviews: 12,
+      badge: null
     },
     {
       id: 4,
@@ -66,7 +84,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Manaslu page
       image: `/Manaslu/erik-OwJ6Cn_DnHM-unsplash.jpg${bust}`,
       description:
-        "Trek around the world's eighth highest mountain (8,163m) on this spectacular yet less-crowded circuit. Cross the challenging Larkya La Pass at 5,106m while experiencing authentic mountain culture in traditional villages. This restricted area trek offers pristine wilderness, ancient monasteries, and dramatic mountain scenery including close views of Manaslu, Himalchuli, and Cheo Himal.",
+        "Trek around the world's eighth highest mountain (8,163m) on this spectacular yet less-crowded circuit.",
       duration: '16 days',
       difficulty: 'Challenging',
       groupSize: '2-8',
@@ -75,13 +93,19 @@ const FeaturedTreks = () => {
       highlights: ['Larkya La Pass', 'Samagaon village', 'Manaslu views', 'Restricted area permit'],
       bestSeason: 'March-May, September-November',
       fallback: '/placeholder.svg',
+      price: 950,
+      oldPrice: 1095,
+      currency: 'US$',
+      rating: 5.0,
+      reviews: 26,
+      badge: 'One of the less crowded trek in Nepal'
     },
     {
       id: 5,
       title: 'Upper Mustang',
       image: upperMustangImg,
       description:
-        'Explore the forbidden kingdom of Mustang, a mystical high-altitude desert that was once an independent Tibetan kingdom. Trek through dramatic canyons, ancient caves, and medieval walled cities including Lo Manthang, the capital. Experience authentic Tibetan Buddhist culture, visit centuries-old monasteries, and witness unique landscapes that resemble the Tibetan plateau.',
+        'Explore the forbidden kingdom of Mustang, a mystical high-altitude desert that was once an independent Tibetan kingdom.',
       duration: '12 days',
       difficulty: 'Moderate',
       groupSize: '2-10',
@@ -90,13 +114,19 @@ const FeaturedTreks = () => {
       highlights: ['Lo Manthang palace', 'Ancient cave monasteries', 'Tibetan culture', 'Desert landscapes'],
       bestSeason: 'March-November',
       fallback: '/placeholder.svg',
+      price: 1795,
+      oldPrice: null,
+      currency: 'US$',
+      rating: 5.0,
+      reviews: 1,
+      badge: null
     },
     {
       id: 6,
       title: 'Gokyo Lakes',
       image: gokyoImg,
       description:
-        "Trek to the stunning turquoise Gokyo Lakes, the world's highest freshwater lake system, situated at 4,700-5,000m altitude. Climb Gokyo Ri (5,357m) for panoramic views of four of the world's six highest peaks: Everest, Lhotse, Makalu, and Cho Oyu. Experience the pristine beauty of the Everest region while avoiding the crowds of the traditional EBC route.",
+        "Trek to the stunning turquoise Gokyo Lakes, the world's highest freshwater lake system.",
       duration: '12 days',
       difficulty: 'Moderate to Challenging',
       groupSize: '2-10',
@@ -105,8 +135,25 @@ const FeaturedTreks = () => {
       highlights: ['Six sacred lakes', 'Gokyo Ri summit', 'Four 8000m+ peaks view', 'Ngozumpa Glacier'],
       bestSeason: 'March-May, September-November',
       fallback: '/placeholder.svg',
+      price: 2435,
+      oldPrice: 2575,
+      currency: 'US$',
+      rating: 4.8,
+      reviews: 8,
+      badge: 'EBC via Gokyo'
     },
   ];
+
+  // Helper to return color classes based on difficulty
+  const difficultyClass = (d: string) => {
+    if (!d) return 'bg-gray-100 text-gray-800';
+    const lower = d.toLowerCase();
+    if (lower.includes('challenging')) return 'bg-red-100 text-red-700';
+    if (lower.includes('moderate') && lower.includes('challenging')) return 'bg-amber-100 text-amber-800';
+    if (lower.includes('moderate')) return 'bg-yellow-100 text-yellow-800';
+    if (lower.includes('easy')) return 'bg-green-100 text-green-700';
+    return 'bg-gray-100 text-gray-800';
+  };
 
   const stats = [
     { icon: Calendar, label: 'Duration', value: treks[activeIndex].duration },
@@ -186,7 +233,12 @@ const FeaturedTreks = () => {
                     </div>
                     <div>
                       <p className="text-xs text-muted-foreground uppercase tracking-wide">{stat.label}</p>
-                      <p className="font-medium">{stat.value}</p>
+                      {/* Render difficulty as a colored badge */}
+                      {stat.label === 'Difficulty' ? (
+                        <span className={`inline-block px-2 py-1 text-xs rounded ${difficultyClass(stat.value as string)}`}>{stat.value}</span>
+                      ) : (
+                        <p className="font-medium">{stat.value}</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -212,37 +264,85 @@ const FeaturedTreks = () => {
         {/* Trek Grid - All Treks */}
         <div className="mt-24">
           <h3 className="text-card-title text-center mb-12">All Trek Options</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* 3 columns on large screens so 6 items show as 3 up and 3 down */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {treks.map((trek) => (
-              <div key={trek.id} className="modern-card overflow-hidden group">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={trek.image}
-                    alt={trek.title}
-                    className="w-full h-full object-cover transition-transform duration-[6000ms] ease-in-out group-hover:scale-110"
-                    loading="lazy"
-                    onError={(e) => {
-                      const img = e.currentTarget;
-                      if (img.src !== window.location.origin + trek.fallback) {
-                        img.src = trek.fallback;
-                      }
-                    }}
-                  />
+              <div key={trek.id} className="modern-card overflow-hidden group flex flex-col h-full">
+                <div className="relative">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={trek.image}
+                      alt={trek.title}
+                      className="w-full h-full object-cover transition-transform duration-[6000ms] ease-in-out group-hover:scale-110"
+                      loading="lazy"
+                      onError={(e) => {
+                        const img = e.currentTarget;
+                        if (img.src !== window.location.origin + trek.fallback) {
+                          img.src = trek.fallback;
+                        }
+                      }}
+                    />
+                  </div>
+
+                  {/* Heart Icon */}
+                  <button className="absolute top-3 left-3 bg-white/90 dark:bg-black/60 w-9 h-9 rounded-full flex items-center justify-center shadow-sm">
+                    <Heart className="w-4 h-4 text-muted-foreground" />
+                  </button>
+
+                  {/* Optional Badge */}
+                  {trek.badge && (
+                    <span className="absolute top-3 right-3 bg-emerald-600 text-white text-xs px-2 py-1 rounded">{trek.badge}</span>
+                  )}
                 </div>
-                <div className="p-6 space-y-4">
+
+                {/* Make content stretch so all cards are same height */}
+                <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <h4 className="font-semibold mb-2">{trek.title}</h4>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{trek.description}</p>
+                    {/* Emphasize primary name and add a special attraction character */}
+                    <h4 className="mb-1 text-sm">
+                      <span className="font-extrabold capitalize">{trek.title.split(' ')[0]}</span>
+                      {trek.title.split(' ').slice(1).join(' ') && (
+                        <span className="ml-1 text-muted-foreground"> {trek.title.split(' ').slice(1).join(' ')}</span>
+                      )}
+                      <span className="ml-2 text-amber-500" aria-hidden>⛰️</span>
+                    </h4>
+
+                    <p className="text-xs text-muted-foreground line-clamp-2 hidden">{trek.description}</p>
+
+                    {/* Difficulty pill for each card */}
+                    <div className="mt-2">
+                      <span className={`inline-block px-2 py-0.5 text-xs rounded ${difficultyClass(trek.difficulty)}`}>{trek.difficulty}</span>
+                    </div>
                   </div>
-                  
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">{trek.duration}</span>
-                    <span className="text-muted-foreground">{trek.difficulty}</span>
+
+                  <div>
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <div className="text-primary font-semibold">Starting from {trek.currency}{trek.price}</div>
+                      {trek.oldPrice && (
+                        <div className="text-red-600 text-xs line-through font-medium">{trek.currency}{trek.oldPrice}</div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
+                      <div className="flex flex-col">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-4 h-4" />
+                          <span>{trek.duration}</span>
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">Difficulty: <span className="font-medium text-muted-foreground">{trek.difficulty}</span></div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Star className="w-4 h-4 text-emerald-600" />
+                        <span className="font-medium text-emerald-600">{trek.rating}</span>
+                        <span className="text-xs">({trek.reviews})</span>
+                      </div>
+                    </div>
+
+                    <Button variant="outline" size="sm" className="w-full mt-2" asChild>
+                      <Link to={trek.route}>View Details</Link>
+                    </Button>
                   </div>
-                  
-                  <Button variant="outline" size="sm" className="w-full" asChild>
-                    <Link to={trek.route}>View Details</Link>
-                  </Button>
                 </div>
               </div>
             ))}

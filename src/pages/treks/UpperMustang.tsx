@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import Footer from '@/components/Footer';
 import { ArrowRight, Calendar, Clock, Users, Mountain, MapPin, Compass } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const UpperMustang = () => {
   const heroUrl = new URL('../../assets/upper-mustang.jpg', import.meta.url).href;
@@ -92,6 +94,11 @@ const UpperMustang = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Upper Mustang trek | Calm Trek Nepal — Forbidden Kingdom Lo Manthang"
+        description="Upper Mustang Trek: explore Lo Manthang’s Tibetan culture, desert cliffs and ancient monasteries with a licensed Nepal trekking company handling permits and logistics." 
+        url="https://calmtrek.com/treks/upper-mustang"
+      />
       <Navbar />
       
       {/* Hero Section */}
@@ -114,6 +121,13 @@ const UpperMustang = () => {
           </div>
         </div>
       </section>
+
+      <SeoIntro
+        sections={[
+          { heading: 'Upper Mustang trek highlights', text: 'Trekking in Nepal’s Upper Mustang reveals Tibetan cultural heartlands, walled Lo Manthang and desert-like cliffs—ideal for cultural and photographic expeditions.' },
+          { heading: 'Permits & responsible travel', text: 'This is a restricted area; permits and responsible local engagement are required. Our Nepal trekking company handles permits and supports local hosts.' },
+        ]}
+      />
 
       {/* Overview Section */}
       <section className="py-20 bg-background">

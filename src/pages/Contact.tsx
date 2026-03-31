@@ -1,13 +1,18 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
 import { CircuitBoard, MapPinned, Sparkles } from 'lucide-react';
+import SeoIntro from '@/components/SeoIntro';
+import SeoMeta from '@/components/SeoMeta';
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Contact Calm Trek Nepal — Plan your trekking in Nepal"
+        description="Contact Calm Trek Nepal to plan Everest Base Camp, Annapurna and tailor-made Himalayan treks. We assist with permits, licensed guides, and clear booking steps for a safe, well-organized adventure."
+      />
       <Navbar />
       <div className="pt-24 md:pt-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,20 +20,22 @@ const Contact = () => {
             <div className="inline-flex items-center justify-center mb-6">
               <CircuitBoard className="h-8 w-8 text-nebula-500 animate-pulse-subtle" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative">
-              <span className="neon-text">Contact Us</span>
-              <div className="absolute -top-3 -right-6 text-cosmos-500">
-                <Sparkles className="w-6 h-6 animate-pulse-subtle" />
-              </div>
-            </h1>
-            <p className="text-lg text-gray-600 relative">
-              Reach out to our team to plan your next adventure in the Himalayas. We're here to answer any questions and help craft your perfect trek.
-              <div className="absolute -bottom-2 right-10">
-                <MapPinned className="w-5 h-5 text-aurora-500" />
-              </div>
-            </p>
+
+            <SeoIntro
+              sections={[
+                {
+                  heading: 'Contact Calm Trek Nepal',
+                  text: 'Contact our team to plan Everest Base Camp, Annapurna and tailor-made Himalayan treks. We assist with permits, licensed guides, clear booking steps, and pre-trek briefings to ensure a safe, well-organized adventure.'
+                },
+                {
+                  heading: 'Book with confidence',
+                  text: 'Send your inquiry or request a custom itinerary — we respond promptly and provide transparent pricing and permit guidance so you can focus on the adventure.'
+                }
+              ]}
+            />
           </div>
         </div>
+
         <ContactSection />
       </div>
       <Footer />

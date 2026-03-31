@@ -9,9 +9,14 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Mountain, Wind, CloudLightning, Sunrise, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SeoMeta from '@/components/SeoMeta';
 
 const Chitwan = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
+
+  const title = 'Chitwan National Park, Nepal | Jungle Safari & Wildlife Tours | Calm Trek Nepal';
+  const description =
+    "Visit Chitwan National Park for Nepal jungle safaris and wildlife tours. Spot rhinos, crocodiles and (with luck) tigers, enjoy canoeing and Tharu culture, and add Chitwan to your trekking in Nepal itinerary.";
 
   // Hero images served from public/Chitwan (slide like Kathmandu)
   const chitwanImages = [
@@ -55,6 +60,7 @@ const Chitwan = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       
       {/* Hero - slide like Kathmandu */}

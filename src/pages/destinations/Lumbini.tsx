@@ -9,9 +9,14 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
 import { Mountain, Wind, CloudLightning, Sunrise, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SeoMeta from '@/components/SeoMeta';
 
 const Lumbini = () => {
   const bust = import.meta.env.DEV ? `?v=${Date.now()}` : '';
+
+  const title = 'Lumbini, Nepal | Buddha’s Birthplace & Pilgrimage Tours | Calm Trek Nepal';
+  const description =
+    'Visit Lumbini, the birthplace of Lord Buddha and a peaceful UNESCO-listed pilgrimage destination in Nepal. Explore monasteries, the Maya Devi Temple, and plan a cultural tour alongside your trekking in Nepal trip.';
 
   // Hero images served from public/Lumbini
   const lumbiniImages = [
@@ -54,6 +59,7 @@ const Lumbini = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SeoMeta title={title} description={description} />
       <Navbar />
       
       {/* Hero - auto sliding images */}

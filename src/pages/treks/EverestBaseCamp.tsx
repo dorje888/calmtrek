@@ -5,6 +5,7 @@ import { ArrowRight, Clock, Mountain, Map as MapIcon, Home, ChevronDown, Check, 
 import { Link } from 'react-router-dom';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/ui/carousel';
 import { Line } from 'react-chartjs-2';
+import SeoMeta from '@/components/SeoMeta';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -484,14 +485,12 @@ const EverestBaseCamp = () => {
   }, [fetchWeather]);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Scroll progress bar */}
-      <div
-        className="fixed top-0 left-0 h-1 z-[9999] bg-gradient-to-r from-blue-600 to-orange-500"
-        style={{ width: `${scrollProgress}%`, transition: 'width 0.3s ease' }}
-        aria-hidden="true"
+    <div className="min-h-screen bg-background">
+      <SeoMeta
+        title="Everest Base Camp trek | Calm Trek Nepal — 14 day EBC itinerary"
+        description="Classic Everest Base Camp trek: guided Lukla flights, Namche acclimatisation, Tengboche & Kala Patthar sunrise. Trusted Nepal trekking company and Sherpa guides."
+        url="https://calmtrek.com/treks/everest-base-camp"
       />
-
       <Navbar />
 
       {/* Hero section */}
