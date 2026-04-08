@@ -10,7 +10,7 @@ import SeoIntro from '@/components/SeoIntro';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background antialiased">
+    <div className="min-h-screen bg-background antialiased overflow-x-hidden">
       <SeoMeta
         title="Calm Trek Nepal — Guided Himalayan Treks: Everest, Annapurna, Manaslu"
         description="Calm Trek Nepal offers expert-led Everest Base Camp, Annapurna Circuit, Manaslu and Gokyo Lakes treks with licensed guides, comfortable teahouse stays, and custom itineraries for all experience levels. Plan your Himalayan adventure with trusted local operators."
@@ -79,7 +79,7 @@ const Index = () => {
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900">Email</div>
-                        <div className="text-gray-600">info@trekfinity.com<br />bookings@trekfinity.com</div>
+                        <div className="text-gray-600">info@calmtrek.com<br />bookings@calmtrek.com</div>
                       </div>
                     </div>
                   </div>

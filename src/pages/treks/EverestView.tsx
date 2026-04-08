@@ -228,42 +228,64 @@ const EverestView = () => {
                     <h3 className="font-bold text-xl mb-2 text-foreground">Phakding to Namche Bazaar (~3,440 m)</h3>
                     <p className="text-muted-foreground">Cross suspension bridges and ascend to the Sherpa capital. 5–6 hours.</p>
                   </div>
-                  {/* Day 4 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Acclimatization in Namche — optional Everest View Hotel (~3,865 m)</h3>
-                    <p className="text-muted-foreground">Active rest day with viewpoint hikes; explore Khumjung & Khunde.</p>
-                  </div>
-                  {/* Day 5 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Tengboche (~3,860 m)</h3>
-                    <p className="text-muted-foreground">Forest trail with river crossings and final climb to monastery ridge. 4–5 hours.</p>
-                  </div>
-                  {/* Day 6 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Trek back to Namche (~3,440 m)</h3>
-                    <p className="text-muted-foreground">Return to Namche with time for bakery treats and shopping. 3–4 hours.</p>
-                  </div>
-                  {/* Day 7 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Lukla (~2,860 m)</h3>
-                    <p className="text-muted-foreground">Long descent to the valley and gentle climb into Lukla. 6–7 hours.</p>
-                  </div>
-                  {/* Day 8 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Fly Lukla → Kathmandu, free time</h3>
-                    <p className="text-muted-foreground">Morning flight out; buffer for weather. Rest/sightseeing in Kathmandu.</p>
-                  </div>
-                  {/* Day 9 */}
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Departure from Kathmandu</h3>
-                    <p className="text-muted-foreground">Transfer to the airport for international departure.</p>
-                  </div>
+
+                  {/* Remaining days in one dropdown (expand/collapse all at once) */}
+                  <details className="group">
+                    <summary className="relative pl-14 cursor-pointer select-none">
+                      <div className="absolute left-0 top-0.5 w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center z-10">
+                        <span className="text-xs font-semibold text-muted-foreground">4–9</span>
+                      </div>
+                      <div className="rounded-xl border border-border/60 bg-white px-4 py-3 shadow-sm hover:bg-muted/40 transition">
+                        <div className="flex items-center justify-between gap-3">
+                          <div>
+                            <div className="font-bold text-foreground">Show remaining days</div>
+                            <div className="text-sm text-muted-foreground">Tap to expand Day 4 to Day 9</div>
+                          </div>
+                          <div className="text-sm font-semibold text-primary group-open:hidden">Show</div>
+                          <div className="text-sm font-semibold text-primary hidden group-open:block">Hide</div>
+                        </div>
+                      </div>
+                    </summary>
+
+                    <div className="mt-8 space-y-8">
+                      {/* Day 4 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Acclimatization in Namche — optional Everest View Hotel (~3,865 m)</h3>
+                        <p className="text-muted-foreground">Active rest day with viewpoint hikes; explore Khumjung & Khunde.</p>
+                      </div>
+                      {/* Day 5 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Tengboche (~3,860 m)</h3>
+                        <p className="text-muted-foreground">Forest trail with river crossings and final climb to monastery ridge. 4–5 hours.</p>
+                      </div>
+                      {/* Day 6 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Trek back to Namche (~3,440 m)</h3>
+                        <p className="text-muted-foreground">Return to Namche with time for bakery treats and shopping. 3–4 hours.</p>
+                      </div>
+                      {/* Day 7 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Lukla (~2,860 m)</h3>
+                        <p className="text-muted-foreground">Long descent to the valley and gentle climb into Lukla. 6–7 hours.</p>
+                      </div>
+                      {/* Day 8 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Fly Lukla → Kathmandu, free time</h3>
+                        <p className="text-muted-foreground">Morning flight out; buffer for weather. Rest/sightseeing in Kathmandu.</p>
+                      </div>
+                      {/* Day 9 */}
+                      <div className="relative pl-14">
+                        <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div>
+                        <h3 className="font-bold text-xl mb-2 text-foreground">Departure from Kathmandu</h3>
+                        <p className="text-muted-foreground">Transfer to the airport for international departure.</p>
+                      </div>
+                    </div>
+                  </details>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground mt-6">Note: Itineraries may vary due to weather, flight schedules, and local conditions.</p>

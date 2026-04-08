@@ -266,7 +266,7 @@ const GokyoLakes = () => {
             <div className="relative">
               <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border"></div>
 
-              <div className="space-y-8">
+              <div className="space-y-8" aria-label="Gokyo Lakes daily itinerary">
                 {/* Day 1 */}
                 <div className="relative pl-14">
                   <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
@@ -294,95 +294,116 @@ const GokyoLakes = () => {
                   <p className="text-muted-foreground mb-2">Cross suspension bridges and ascend the Namche Hill into the Sherpa capital. 5–6 hours.</p>
                 </div>
 
-                {/* Day 4 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">4</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Acclimatization in Namche (3,440 m)</h3>
-                  <p className="text-muted-foreground mb-2">Active rest day. Optional hike to Everest View Hotel, Khumjung and Khunde; visit local museum and market.</p>
-                </div>
+                {/* Remaining days in one dropdown (expand/collapse all at once) */}
+                <details className="group">
+                  <summary className="relative pl-14 cursor-pointer select-none">
+                    <div className="absolute left-0 top-0.5 w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center z-10">
+                      <span className="text-xs font-semibold text-muted-foreground">4–12</span>
+                    </div>
+                    <div className="rounded-xl border border-border/60 bg-white px-4 py-3 shadow-sm hover:bg-muted/40 transition">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <div className="font-bold text-foreground">Show remaining days</div>
+                          <div className="text-sm text-muted-foreground">Tap to expand Day 4 to Day 12</div>
+                        </div>
+                        <div className="text-sm font-semibold text-primary group-open:hidden">Show</div>
+                        <div className="text-sm font-semibold text-primary hidden group-open:block">Hide</div>
+                      </div>
+                    </div>
+                  </summary>
 
-                {/* Day 5 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">5</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Dole (4,038 m) via Mong La & Phortse Tenga</h3>
-                  <p className="text-muted-foreground mb-2">Leave the main EBC trail, contour above the valley, climb over Mong La and descend to Phortse Tenga before the final ascent to Dole. 5–6 hours.</p>
-                </div>
+                  <div className="mt-8 space-y-8">
+                    {/* Day 4 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">4</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Acclimatization in Namche (3,440 m)</h3>
+                      <p className="text-muted-foreground mb-2">Active rest day. Optional hike to Everest View Hotel, Khumjung and Khunde; visit local museum and market.</p>
+                    </div>
 
-                {/* Day 6 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">6</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Dole to Machhermo (4,410 m)</h3>
-                  <p className="text-muted-foreground mb-2">Gradual trail with big valley views and juniper slopes. 3–4 hours; afternoon rest and acclimatization walk.</p>
-                </div>
+                    {/* Day 5 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">5</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Namche to Dole (4,038 m) via Mong La & Phortse Tenga</h3>
+                      <p className="text-muted-foreground mb-2">Leave the main EBC trail, contour above the valley, climb over Mong La and descend to Phortse Tenga before the final ascent to Dole. 5–6 hours.</p>
+                    </div>
 
-                {/* Day 7 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">7</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Machhermo to Gokyo (4,790 m)</h3>
-                  <p className="text-muted-foreground mb-2">Follow the valley past the lower lakes and the Ngozumpa Glacier to reach Gokyo beside the third lake. 4–5 hours.</p>
-                </div>
+                    {/* Day 6 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">6</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Dole to Machhermo (4,410 m)</h3>
+                      <p className="text-muted-foreground mb-2">Gradual trail with big valley views and juniper slopes. 3–4 hours; afternoon rest and acclimatization walk.</p>
+                    </div>
 
-                {/* Day 8 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">8</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Gokyo Ri (5,357 m) & Fifth Lake Exploration</h3>
-                  <p className="text-muted-foreground mb-2">Sunrise ascent of Gokyo Ri for a 360° panorama of Everest, Lhotse, Makalu and Cho Oyu. Optional hike to the fourth/fifth lakes along the glacier. Overnight Gokyo.</p>
-                </div>
+                    {/* Day 7 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">7</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Machhermo to Gokyo (4,790 m)</h3>
+                      <p className="text-muted-foreground mb-2">Follow the valley past the lower lakes and the Ngozumpa Glacier to reach Gokyo beside the third lake. 4–5 hours.</p>
+                    </div>
 
-                {/* Day 9 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">9</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Gokyo to Dole (4,038 m) or Phortse</h3>
-                  <p className="text-muted-foreground mb-2">Begin the descent, retracing to Dole or taking the scenic Phortse variation. 5–6 hours.</p>
-                </div>
+                    {/* Day 8 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">8</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Gokyo Ri (5,357 m) & Fifth Lake Exploration</h3>
+                      <p className="text-muted-foreground mb-2">Sunrise ascent of Gokyo Ri for a 360° panorama of Everest, Lhotse, Makalu and Cho Oyu. Optional hike to the fourth/fifth lakes along the glacier. Overnight Gokyo.</p>
+                    </div>
 
-                {/* Day 10 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">10</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Dole/Phortse to Namche Bazaar</h3>
-                  <p className="text-muted-foreground mb-2">Return to the Sherpa hub of Namche. Hot shower and bakery stop recommended! 4–5 hours.</p>
-                </div>
+                    {/* Day 9 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">9</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Gokyo to Dole (4,038 m) or Phortse</h3>
+                      <p className="text-muted-foreground mb-2">Begin the descent, retracing to Dole or taking the scenic Phortse variation. 5–6 hours.</p>
+                    </div>
 
-                {/* Day 11 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">11</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Namche Bazaar to Lukla</h3>
-                  <p className="text-muted-foreground mb-2">A long descent to cross the Dudh Koshi and gentle climb back to Lukla. 6–7 hours.</p>
-                </div>
+                    {/* Day 10 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">10</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Dole/Phortse to Namche Bazaar</h3>
+                      <p className="text-muted-foreground mb-2">Return to the Sherpa hub of Namche. Hot shower and bakery stop recommended! 4–5 hours.</p>
+                    </div>
 
-                {/* Day 12 */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">12</span>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Fly back to Kathmandu (buffer day)</h3>
-                  <p className="text-muted-foreground mb-2">Morning flight from Lukla. Free time in Kathmandu for rest or sightseeing. Keep as a weather contingency day.</p>
-                </div>
+                    {/* Day 11 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">11</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Namche Bazaar to Lukla</h3>
+                      <p className="text-muted-foreground mb-2">A long descent to cross the Dudh Koshi and gentle climb back to Lukla. 6–7 hours.</p>
+                    </div>
 
-                {/* Optional extras */}
-                <div className="relative pl-14">
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
-                    <span className="font-bold text-mountain-700">+</span>
+                    {/* Day 12 */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">12</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Fly back to Kathmandu (buffer day)</h3>
+                      <p className="text-muted-foreground mb-2">Morning flight from Lukla. Free time in Kathmandu for rest or sightseeing. Keep as a weather contingency day.</p>
+                    </div>
+
+                    {/* Optional extras */}
+                    <div className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10">
+                        <span className="font-bold text-mountain-700">+</span>
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-foreground">Optional: Extra sightseeing / departure</h3>
+                      <p className="text-muted-foreground mb-2">Add 1–2 spare days for sightseeing, additional buffer or international departure flexibility.</p>
+                    </div>
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">Optional: Extra sightseeing / departure</h3>
-                  <p className="text-muted-foreground mb-2">Add 1–2 spare days for sightseeing, additional buffer or international departure flexibility.</p>
-                </div>
+                </details>
               </div>
             </div>
 

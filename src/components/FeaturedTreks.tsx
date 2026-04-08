@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, Users, Mountain, Star, Heart } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Users, Mountain, Star, Heart, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import upperMustangImg from '@/assets/upper-mustang.jpg';
 import gokyoImg from '@/assets/gokyo-lakes.jpg';
@@ -18,7 +18,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Everest page
       image: `/Everest/geetangey-ra4NJidcK1A-unsplash.jpg${bust}`,
       description:
-        "Walk in the footsteps of legends to the base of the world's highest peak at 5,364m. Experience breathtaking mountain vistas, visit centuries-old monasteries, and immerse yourself in authentic Sherpa culture.",
+        'Everest Base Camp (EBC) – most popular',
       duration: '14 days',
       difficulty: 'Challenging',
       groupSize: '2-12',
@@ -40,7 +40,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Annapurna page
       image: `/Annapurna/francesca-varisco-r7IBk3kt5hc-unsplash.jpg${bust}`,
       description:
-        "Journey through Nepal's most diverse trekking route, crossing the dramatic Thorong La Pass at 5,416m.",
+        'Annapurna Circuit – classic long trek',
       duration: '18 days',
       difficulty: 'Moderate to Challenging',
       groupSize: '2-10',
@@ -62,7 +62,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Langtang page
       image: `/Langtang/himalayan-local-guide-xc2GggytytA-unsplash.jpg${bust}`,
       description:
-        "Discover the 'Valley of Glaciers' with its unique blend of Himalayan and Tibetan cultures.",
+        'Langtang Valley – near Kathmandu',
       duration: '10 days',
       difficulty: 'Moderate',
       groupSize: '2-8',
@@ -84,7 +84,7 @@ const FeaturedTreks = () => {
       // Match hero images used on the Manaslu page
       image: `/Manaslu/erik-OwJ6Cn_DnHM-unsplash.jpg${bust}`,
       description:
-        "Trek around the world's eighth highest mountain (8,163m) on this spectacular yet less-crowded circuit.",
+        'Manaslu Circuit – less crowded, trending',
       duration: '16 days',
       difficulty: 'Challenging',
       groupSize: '2-8',
@@ -105,7 +105,7 @@ const FeaturedTreks = () => {
       title: 'Upper Mustang',
       image: upperMustangImg,
       description:
-        'Explore the forbidden kingdom of Mustang, a mystical high-altitude desert that was once an independent Tibetan kingdom.',
+        'Upper Mustang – unique desert landscape',
       duration: '12 days',
       difficulty: 'Moderate',
       groupSize: '2-10',
@@ -126,7 +126,7 @@ const FeaturedTreks = () => {
       title: 'Gokyo Lakes',
       image: gokyoImg,
       description:
-        "Trek to the stunning turquoise Gokyo Lakes, the world's highest freshwater lake system.",
+        'Gokyo Lakes – scenic alternative to EBC',
       duration: '12 days',
       difficulty: 'Moderate to Challenging',
       groupSize: '2-10',
@@ -160,6 +160,33 @@ const FeaturedTreks = () => {
     { icon: Mountain, label: 'Elevation', value: treks[activeIndex].elevation },
     { icon: Clock, label: 'Difficulty', value: treks[activeIndex].difficulty },
     { icon: Users, label: 'Group Size', value: treks[activeIndex].groupSize },
+  ];
+
+  const destinations = [
+    {
+      name: 'Kathmandu',
+      href: '/destinations/kathmandu',
+      image: `/Kathmandu/martijn-vonk-FTxTyNog7BY-unsplash.jpg${bust}`,
+      blurb: 'Culture, temples, and the bustling gateway to the Himalaya.'
+    },
+    {
+      name: 'Pokhara',
+      href: '/destinations/pokhara',
+      image: `/Pokhara/kaushal-subedi-zRWq-7SWVSU-unsplash.jpg${bust}`,
+      blurb: 'Lakeside relaxation with Annapurna views and easy day hikes.'
+    },
+    {
+      name: 'Chitwan',
+      href: '/destinations/chitwan',
+      image: `/Chitwan/kedar-bhusal-_rHplGon_uU-unsplash.jpg${bust}`,
+      blurb: 'Jungle safari, one-horned rhinos, and Tharu culture experiences.'
+    },
+    {
+      name: 'Lumbini',
+      href: '/destinations/lumbini',
+      image: `/Lumbini/arnav-adhikari-85E5MXeS-VY-unsplash.jpg${bust}`,
+      blurb: 'Peaceful pilgrimage site—birthplace of Buddha with monasteries.'
+    },
   ];
 
   return (
@@ -263,7 +290,7 @@ const FeaturedTreks = () => {
 
         {/* Trek Grid - All Treks */}
         <div className="mt-24">
-          <h3 className="text-card-title text-center mb-12">All Trek Options</h3>
+          <h3 className="text-card-title text-center mb-12">Top trekking destinations</h3>
           {/* 3 columns on large screens so 6 items show as 3 up and 3 down */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {treks.map((trek) => (
@@ -307,7 +334,8 @@ const FeaturedTreks = () => {
                       <span className="ml-2 text-amber-500" aria-hidden>⛰️</span>
                     </h4>
 
-                    <p className="text-xs text-muted-foreground line-clamp-2 hidden">{trek.description}</p>
+                    {/* Show the short descriptor under each trek name */}
+                    <p className="text-xs text-muted-foreground">{trek.description}</p>
 
                     {/* Difficulty pill for each card */}
                     <div className="mt-2">
@@ -345,6 +373,50 @@ const FeaturedTreks = () => {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Destinations (from Navbar) */}
+        <div id="destinations" className="mt-16">
+          <h3 className="text-card-title text-center mb-4">Destinations</h3>
+          <p className="text-body text-center max-w-2xl mx-auto mb-10">
+            Explore Nepal beyond the trail—iconic cities, lakes, wildlife, and spiritual heritage.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {destinations.map((d) => (
+              <Link
+                key={d.name}
+                to={d.href}
+                className="modern-card overflow-hidden group focus:outline-none focus:ring-2 focus:ring-primary/30"
+              >
+                <div className="relative">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={d.image}
+                      alt={d.name}
+                      className="w-full h-full object-cover transition-transform duration-[5000ms] ease-in-out group-hover:scale-110"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = '/placeholder.svg';
+                      }}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" aria-hidden="true" />
+                  <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-900">
+                    <MapPin className="h-3.5 w-3.5 text-primary" />
+                    {d.name}
+                  </div>
+                </div>
+
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">{d.blurb}</p>
+                  <div className="mt-3 text-sm font-semibold text-primary inline-flex items-center gap-2">
+                    View details <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

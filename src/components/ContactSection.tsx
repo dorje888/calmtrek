@@ -58,7 +58,7 @@ const ContactSection: React.FC<{ hideForm?: boolean; landingLayout?: boolean }> 
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email",
-      details: ["info@trekfinity.com", "bookings@trekfinity.com"]
+      details: ["info@calmtrek.com", "bookings@calmtrek.com"]
     }
   ];
 

@@ -1,0 +1,70 @@
+/* ABC page-only theme overrides (scoped by .abc-theme wrapper) */
+
+.abc-theme {
+  /* BODY BACKGROUND: sky -> earth */
+  background: linear-gradient(to bottom, #e8f1f8 0%, #f5f7fa 45%, #f0ede8 100%);
+}
+
+/* TEXTURE OVERLAY (page only)
+   Using a lightweight inline SVG pattern (no new assets required).
+*/
+.abc-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23000' stroke-opacity='1' stroke-width='1'%3E%3Cpath d='M20 120 C90 40 180 40 250 120 S410 200 500 120'/%3E%3Cpath d='M10 260 C80 180 170 180 240 260 S400 340 510 260'/%3E%3Cpath d='M20 400 C110 320 210 320 300 400 S430 470 500 400'/%3E%3Cpath d='M120 20 C40 90 40 180 120 250 S200 410 120 500'/%3E%3Cpath d='M260 10 C180 80 180 170 260 240 S340 400 260 510'/%3E%3Cpath d='M400 20 C320 110 320 210 400 300 S470 430 400 500'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 520px 520px;
+  background-repeat: repeat;
+}
+
+/* Ensure content sits above texture overlay */
+.abc-theme > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* SECTION BACKGROUNDS (ABC page only) */
+.abc-theme .abc-hero {
+  position: relative;
+}
+
+.abc-theme .abc-hero::after {
+  /* hero overlay handled in component; keep room for future overrides */
+  content: "";
+}
+
+.abc-theme .abc-overview {
+  background: #ffffff;
+}
+
+.abc-theme .abc-highlights {
+  background: #f0f7fb;
+}
+
+.abc-theme .abc-faq {
+  background: #f8f6f3;
+}
+
+.abc-theme .abc-itinerary {
+  background: #ffffff;
+  /* subtle texture */
+  background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.abc-theme .abc-booking {
+  background: #f9fafb;
+}
+
+/* Footer: deep mountain blue gradient (wrap Footer with a container) */
+.abc-theme .abc-footer {
+  background: linear-gradient(135deg, #2c4a5e 0%, #1e3a4f 100%);
+}
+
+/* Make the existing Footer component transparent so wrapper can provide the gradient */
+.abc-theme .abc-footer footer > div:last-child {
+  background: transparent !important;
+}

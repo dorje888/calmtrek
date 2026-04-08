@@ -189,16 +189,38 @@ const MardiHimal = () => {
                 <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">2</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Deurali → Forest Camp (2,600 m)</h3><p className="text-muted-foreground">Pleasant forested trail with gradual ascents to Forest Camp. 4–5 hours.</p></div>
                 {/* Day 3 */}
                 <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">3</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Forest Camp → Low Camp (2,990 m)</h3><p className="text-muted-foreground">Continue through rhododendron and mossy woods to Low Camp with first big views of Fishtail. 3–4 hours.</p></div>
-                {/* Day 4 */}
-                <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Low Camp → High Camp (3,580 m)</h3><p className="text-muted-foreground">Ridge walking with expanding panoramas towards Annapurna South and Hiunchuli. 3–4 hours.</p></div>
-                {/* Day 5 */}
-                <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Mardi Himal Base Camp (4,500 m), return to High Camp</h3><p className="text-muted-foreground">Pre-dawn start for sunrise. Hike to the viewpoint/Base Camp and return to High Camp. 6–7 hours round trip.</p></div>
-                {/* Day 6 */}
-                <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div><h3 className="font-bold text-xl mb-2 text-foreground">High Camp → Siding (1,750 m)</h3><p className="text-muted-foreground">Descend via beautiful forest trails to Siding village for a quiet homestay experience. 5–6 hours.</p></div>
-                {/* Day 7 */}
-                <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Drive Siding → Pokhara</h3><p className="text-muted-foreground">Morning village walk and drive back to Pokhara. Optional end in Lwang village variant.</p></div>
-                {/* Optional */}
-                <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">+</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Optional rest/extra day</h3><p className="text-muted-foreground">Add a rest day at High Camp for acclimatization and extra ridge exploration.</p></div>
+
+                {/* Remaining days in one dropdown (expand/collapse all at once). Note: 5–7 day treks are treated as long here due to the optional extra day. */}
+                <details className="group">
+                  <summary className="relative pl-14 cursor-pointer select-none">
+                    <div className="absolute left-0 top-0.5 w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center z-10">
+                      <span className="text-xs font-semibold text-muted-foreground">4–+</span>
+                    </div>
+                    <div className="rounded-xl border border-border/60 bg-white px-4 py-3 shadow-sm hover:bg-muted/40 transition">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <div className="font-bold text-foreground">Show remaining days</div>
+                          <div className="text-sm text-muted-foreground">Tap to expand Day 4 onward</div>
+                        </div>
+                        <div className="text-sm font-semibold text-primary group-open:hidden">Show</div>
+                        <div className="text-sm font-semibold text-primary hidden group-open:block">Hide</div>
+                      </div>
+                    </div>
+                  </summary>
+
+                  <div className="mt-8 space-y-8">
+                    {/* Day 4 */}
+                    <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Low Camp → High Camp (3,580 m)</h3><p className="text-muted-foreground">Ridge walking with expanding panoramas towards Annapurna South and Hiunchuli. 3–4 hours.</p></div>
+                    {/* Day 5 */}
+                    <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Mardi Himal Base Camp (4,500 m), return to High Camp</h3><p className="text-muted-foreground">Pre-dawn start for sunrise. Hike to the viewpoint/Base Camp and return to High Camp. 6–7 hours round trip.</p></div>
+                    {/* Day 6 */}
+                    <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div><h3 className="font-bold text-xl mb-2 text-foreground">High Camp → Siding (1,750 m)</h3><p className="text-muted-foreground">Descend via beautiful forest trails to Siding village for a quiet homestay experience. 5–6 hours.</p></div>
+                    {/* Day 7 */}
+                    <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Drive Siding → Pokhara</h3><p className="text-muted-foreground">Morning village walk and drive back to Pokhara. Optional end in Lwang village variant.</p></div>
+                    {/* Optional */}
+                    <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">+</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Optional rest/extra day</h3><p className="text-muted-foreground">Add a rest day at High Camp for acclimatization and extra ridge exploration.</p></div>
+                  </div>
+                </details>
               </div>
             </div>
           </div>

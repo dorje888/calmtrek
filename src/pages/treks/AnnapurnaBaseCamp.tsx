@@ -183,22 +183,44 @@ const AnnapurnaBaseCamp = () => {
                   <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">3</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Drive to Nayapul, trek to Tikhedhunga (~1,570 m)</h3><p className="text-muted-foreground">Warm-up day along rivers and terraced hillsides. 4–5 hours.</p></div>
                   {/* Day 4 */}
                   <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Tikhedhunga to Ghorepani (~2,860 m)</h3><p className="text-muted-foreground">Steady ascent via stone steps and rhododendron forest. 6–7 hours.</p></div>
-                  {/* Day 5 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Poon Hill sunrise (3,210 m), trek to Tadapani (~2,630 m)</h3><p className="text-muted-foreground">Dawn viewpoint hike followed by forested traverse to Tadapani. 5–6 hours.</p></div>
-                  {/* Day 6 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Tadapani to Chhomrong (~2,170 m)</h3><p className="text-muted-foreground">Descend and climb through villages to the Sanctuary gateway. 4–5 hours.</p></div>
-                  {/* Day 7 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Chhomrong to Himalaya Hotel (~2,920 m) via Bamboo & Dovan</h3><p className="text-muted-foreground">Follow the Modi Khola gorge into bamboo and rhododendron forest. 6–7 hours.</p></div>
-                  {/* Day 8 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Himalaya → MBC → Annapurna Base Camp (4,130 m)</h3><p className="text-muted-foreground">Gradual climb to Machhapuchhre Base Camp, then the scenic basin of ABC. 5–6 hours.</p></div>
-                  {/* Day 9 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Descend to Bamboo (~2,310 m)</h3><p className="text-muted-foreground">Retrace through the gorge with easier downhill walking. 5–6 hours.</p></div>
-                  {/* Day 10 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">10</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Bamboo to Jhinu Danda (~1,780 m) — hot springs</h3><p className="text-muted-foreground">Shorter day with time to relax in the natural hot springs near the river. 4–5 hours.</p></div>
-                  {/* Day 11 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">11</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Trek back to Nayapul, drive to Pokhara (820 m)</h3><p className="text-muted-foreground">Final trail day through villages and farmland, then drive to lakeside Pokhara.</p></div>
-                  {/* Day 12 */}
-                  <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">12</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Return to Kathmandu / Departure</h3><p className="text-muted-foreground">Drive or fly back to Kathmandu. Trip concludes or extend your stay.</p></div>
+
+                  {/* Remaining days in one dropdown (expand/collapse all at once) */}
+                  <details className="group">
+                    <summary className="relative pl-14 cursor-pointer select-none">
+                      <div className="absolute left-0 top-0.5 w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center z-10">
+                        <span className="text-xs font-semibold text-muted-foreground">5–12</span>
+                      </div>
+                      <div className="rounded-xl border border-border/60 bg-white px-4 py-3 shadow-sm hover:bg-muted/40 transition">
+                        <div className="flex items-center justify-between gap-3">
+                          <div>
+                            <div className="font-bold text-foreground">Show remaining days</div>
+                            <div className="text-sm text-muted-foreground">Tap to expand Day 5 to Day 12</div>
+                          </div>
+                          <div className="text-sm font-semibold text-primary group-open:hidden">Show</div>
+                          <div className="text-sm font-semibold text-primary hidden group-open:block">Hide</div>
+                        </div>
+                      </div>
+                    </summary>
+
+                    <div className="mt-8 space-y-8">
+                      {/* Day 5 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Poon Hill sunrise (3,210 m), trek to Tadapani (~2,630 m)</h3><p className="text-muted-foreground">Dawn viewpoint hike followed by forested traverse to Tadapani. 5–6 hours.</p></div>
+                      {/* Day 6 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Tadapani to Chhomrong (~2,170 m)</h3><p className="text-muted-foreground">Descend and climb through villages to the Sanctuary gateway. 4–5 hours.</p></div>
+                      {/* Day 7 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Chhomrong to Himalaya Hotel (~2,920 m) via Bamboo & Dovan</h3><p className="text-muted-foreground">Follow the Modi Khola gorge into bamboo and rhododendron forest. 6–7 hours.</p></div>
+                      {/* Day 8 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Himalaya → MBC → Annapurna Base Camp (4,130 m)</h3><p className="text-muted-foreground">Gradual climb to Machhapuchhre Base Camp, then the scenic basin of ABC. 5–6 hours.</p></div>
+                      {/* Day 9 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Descend to Bamboo (~2,310 m)</h3><p className="text-muted-foreground">Retrace through the gorge with easier downhill walking. 5–6 hours.</p></div>
+                      {/* Day 10 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">10</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Bamboo to Jhinu Danda (~1,780 m) — hot springs</h3><p className="text-muted-foreground">Shorter day with time to relax in the natural hot springs near the river. 4–5 hours.</p></div>
+                      {/* Day 11 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">11</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Trek back to Nayapul, drive to Pokhara (820 m)</h3><p className="text-muted-foreground">Final trail day through villages and farmland, then drive to lakeside Pokhara.</p></div>
+                      {/* Day 12 */}
+                      <div className="relative pl-14"><div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">12</span></div><h3 className="font-bold text-xl mb-2 text-foreground">Return to Kathmandu / Departure</h3><p className="text-muted-foreground">Drive or fly back to Kathmandu. Trip concludes or extend your stay.</p></div>
+                    </div>
+                  </details>
                 </div>
               </div>
             </div>

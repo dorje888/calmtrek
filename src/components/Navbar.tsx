@@ -454,17 +454,19 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
               <div key={link.name}>
                 {(link as any).dropdownItems || (link as any).dropdownGroups ? (
                   <div>
-                    <button 
+                    <button
                       className="flex items-center justify-between w-full text-left text-foreground font-medium py-2"
                       onClick={(e) => toggleDropdown(link.name, e)}
                     >
                       {link.name}
-                      <ChevronDown className={cn(
-                        "h-4 w-4 transition-transform", 
-                        activeDropdown === link.name && "rotate-180"
-                      )} />
+                      <ChevronDown
+                        className={cn(
+                          'h-4 w-4 transition-transform',
+                          activeDropdown === link.name && 'rotate-180'
+                        )}
+                      />
                     </button>
-                    
+
                     {activeDropdown === link.name && (
                       <div className="pl-4 mt-2 space-y-2 animate-fade-in max-h-[70vh] overflow-y-auto pr-2 -mr-2">
                         {(link as any).dropdownGroups ? (
@@ -476,8 +478,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
                                   key={item.name}
                                   to={item.href}
                                   className={cn(
-                                    "flex items-center gap-2 text-sm py-1",
-                                    isActivePath(item.href) ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                                    'flex items-center gap-2 text-sm py-1',
+                                    isActivePath(item.href) ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                                   )}
                                   onClick={closeDropdown}
                                 >
@@ -493,8 +495,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
                               key={item.name}
                               to={item.href}
                               className={cn(
-                                "flex items-center gap-2 text-sm py-1",
-                                isActivePath(item.href) ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                                'flex items-center gap-2 text-sm py-1',
+                                isActivePath(item.href) ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
                               )}
                               onClick={closeDropdown}
                             >
@@ -510,8 +512,8 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
                   <Link
                     to={link.href}
                     className={cn(
-                      "block font-medium py-2",
-                      isActivePath(link.href) ? "text-primary" : "text-foreground hover:opacity-75"
+                      'block font-medium py-2',
+                      isActivePath(link.href) ? 'text-primary' : 'text-foreground hover:opacity-75'
                     )}
                     onClick={closeDropdown}
                   >
@@ -520,13 +522,6 @@ const Navbar: React.FC<NavbarProps> = ({ variant = 'fixed' }) => {
                 )}
               </div>
             ))}
-            
-            <div className="pt-4 border-t border-border/40">
-              {/* Revert mobile CTA to original */}
-              <Button className="w-full" asChild>
-                <Link to="/contact" onClick={closeDropdown}>Book Now</Link>
-              </Button>
-            </div>
           </div>
         </div>
       )}
