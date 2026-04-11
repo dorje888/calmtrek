@@ -45,8 +45,8 @@ const AboutPage = () => {
   const teamMembers = [
     {
       name: 'Pasang Tamang',
-      role: 'Professional Licensed Trekking Guide & Company Manager',
-      image: '/Team/Screenshot_20251118_114502.png',
+      role: 'Founder & Trek Leader',
+      image: '/Team/pasang.jpg',
       bio: 'Highly experienced government‑licensed guide & company manager with deep Himalayan expertise and a strong safety and client care focus.',
       strengths: [
         'Licensed and professional guide',
@@ -56,8 +56,8 @@ const AboutPage = () => {
         'Strong knowledge of Himalayan routes & culture'
       ],
       contacts: {
-        facebook: 'https://www.facebook.com/pasang.lama.9862',
-        instagram: 'https://www.instagram.com/pasang_pt?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
+        facebook: '#',
+        instagram: '#'
       }
     },
     {

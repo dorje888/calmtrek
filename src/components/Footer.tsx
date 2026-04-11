@@ -27,7 +27,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, href: '#' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/calmtrek/?utm_source=ig_web_button_share_sheet' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/calmtreknepal/' },
     { name: 'Twitter', icon: Twitter, href: '#' },
   ];
 
@@ -62,6 +62,8 @@ const Footer = () => {
                     <a
                       key={social.name}
                       href={social.href}
+                      target={social.href === '#' ? undefined : '_blank'}
+                      rel={social.href === '#' ? undefined : 'noopener noreferrer'}
                       className="w-9 h-9 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
                       aria-label={social.name}
                     >
@@ -164,6 +166,8 @@ const Footer = () => {
                     <a
                       key={social.name}
                       href={social.href}
+                      target={social.href === '#' ? undefined : '_blank'}
+                      rel={social.href === '#' ? undefined : 'noopener noreferrer'}
                       className="w-10 h-10 rounded-full bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-colors duration-300"
                       aria-label={social.name}
                     >
