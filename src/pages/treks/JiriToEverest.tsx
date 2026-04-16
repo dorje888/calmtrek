@@ -220,35 +220,63 @@ const JiriToEverest = () => {
               <div className="relative">
                 <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border" aria-hidden="true"></div>
                 <div className="space-y-8" aria-label="Jiri to Everest Base Camp daily itinerary">
+                  {/* Days 1–2 visible */}
                   {[
                     ['Arrival in Kathmandu (1,400 m)', 'Welcome to Nepal! Airport pickup and transfer to your hotel in Thamel. Evening briefing and equipment check. Accommodation: Hotel in Kathmandu.'],
                     ['Drive Kathmandu → Jiri (1,905 m) – 7–8 hours', 'Scenic drive east through green hills and terraced farmland to Jiri, gateway to the old Everest route.'],
-                    ['Jiri → Bhandar (2,190 m) – ~6 hours', 'Uphill through forests and hamlets; descend to Bhandar among terraced fields.'],
-                    ['Bhandar → Sete (2,575 m) – ~6 hours', 'Descend to Likhu Khola, then climb steeply through forests to Sete, a Sherpa village with monasteries.'],
-                    ['Sete → Junbesi (2,700 m) via Lamjura La (3,530 m) – ~6 hours', 'Cross the highest pass between Jiri and Namche, then descend to beautiful Junbesi.'],
-                    ['Junbesi → Nunthala (2,200 m) via Taksindu La (3,071 m) – ~6 hours', 'Visit Junbesi monastery, cross Taksindu La and descend through forest to Nunthala.'],
-                    ['Nunthala → Bupsa (2,360 m) – ~6 hours', 'Drop to the Dudh Koshi and climb through Rai and Sherpa villages to Bupsa.'],
-                    ['Bupsa → Surke (2,290 m) – ~5 hours', 'Gradual forested trail with monkeys and birds and views toward Khumbu peaks.'],
-                    ['Surke → Phakding (2,610 m) – ~5 hours', 'Join the main Everest trail at Chaurikharka and follow the Dudh Koshi to Phakding.'],
-                    ['Phakding → Namche Bazaar (3,440 m) – ~6 hours', 'Enter Sagarmatha National Park and tackle the iconic climb to Namche, the Sherpa capital.'],
-                    ['Acclimatization in Namche Bazaar', 'Optional hikes to Everest View Hotel and Khumjung plus the Sherpa Museum.'],
-                    ['Namche → Tengboche (3,860 m) – ~5 hours', 'Balcony trail with views over the Imja valley; visit Tengboche Monastery.'],
-                    ['Tengboche → Dingboche (4,410 m) – ~6 hours', 'Descend to Debuche, cross Imja River, then climb to fields and lodges of Dingboche.'],
-                    ['Acclimatization at Dingboche', 'Hike Nangkartshang Peak (5,083 m) for Makalu and Imja Valley panoramas.'],
-                    ['Dingboche → Lobuche (4,910 m) – ~5 hours', 'Pass the memorials at Thukla and traverse the Khumbu Glacier moraines to Lobuche.'],
-                    ['Lobuche → Gorak Shep & Everest Base Camp (5,364 m) – ~8 hours', 'Reach EBC along the glacier margins, then return to Gorak Shep for the night.'],
-                    ['Kala Patthar (5,545 m) → Pheriche (4,240 m) – ~7 hours', 'Pre-dawn climb for 360° sunrise of Everest region; descend to Pheriche.'],
-                    ['Pheriche → Namche Bazaar – ~6 hours', 'Retrace via Pangboche and Tengboche to Namche.'],
-                    ['Namche → Lukla – ~7 hours', 'Final day across bridges and forest to Lukla; celebrate with the crew.'],
-                    ['Fly Lukla → Kathmandu', 'Morning flight; free time for rest and shopping. Accommodation: Hotel in Kathmandu.'],
-                    ['Final Departure', 'Transfer to the airport for your onward journey.']
                   ].map((it, i) => (
-                    <div key={i} className="relative pl-14">
-                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">{i+1}</span></div>
+                    <div key={`top-${i}`} className="relative pl-14">
+                      <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">{i + 1}</span></div>
                       <h3 className="font-bold text-xl mb-1 text-foreground">{it[0]}</h3>
                       <p className="text-muted-foreground">{it[1]}</p>
                     </div>
                   ))}
+
+                  {/* Collapse days 3+ to keep the page shorter */}
+                  <details className="group rounded-xl border border-border/60 bg-white/70 overflow-hidden">
+                    <summary className="list-none cursor-pointer select-none px-5 py-4 flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="font-bold text-xl text-foreground">Itinerary — expand day-by-day</h3>
+                        <p className="text-muted-foreground text-sm">Tap to show remaining days.</p>
+                      </div>
+                      <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-mountain-100 text-mountain-700 font-bold group-open:rotate-180 transition">⌄</span>
+                    </summary>
+
+                    <div className="px-5 pb-5">
+                      <div className="relative">
+                        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border" aria-hidden="true"></div>
+                        <div className="space-y-8" aria-label="Jiri to Everest Base Camp daily itinerary (expanded)">
+                          {[
+                            ['Jiri → Bhandar (2,190 m) – ~6 hours', 'Uphill through forests and hamlets; descend to Bhandar among terraced fields.'],
+                            ['Bhandar → Sete (2,575 m) – ~6 hours', 'Descend to Likhu Khola, then climb steeply through forests to Sete, a Sherpa village with monasteries.'],
+                            ['Sete → Junbesi (2,700 m) via Lamjura La (3,530 m) – ~6 hours', 'Cross the highest pass between Jiri and Namche, then descend to beautiful Junbesi.'],
+                            ['Junbesi → Nunthala (2,200 m) via Taksindu La (3,071 m) – ~6 hours', 'Visit Junbesi monastery, cross Taksindu La and descend through forest to Nunthala.'],
+                            ['Nunthala → Bupsa (2,360 m) – ~6 hours', 'Drop to the Dudh Koshi and climb through Rai and Sherpa villages to Bupsa.'],
+                            ['Bupsa → Surke (2,290 m) – ~5 hours', 'Gradual forested trail with monkeys and birds and views toward Khumbu peaks.'],
+                            ['Surke → Phakding (2,610 m) – ~5 hours', 'Join the main Everest trail at Chaurikharka and follow the Dudh Koshi to Phakding.'],
+                            ['Phakding → Namche Bazaar (3,440 m) – ~6 hours', 'Enter Sagarmatha National Park and tackle the iconic climb to Namche, the Sherpa capital.'],
+                            ['Acclimatization in Namche Bazaar', 'Optional hikes to Everest View Hotel and Khumjung plus the Sherpa Museum.'],
+                            ['Namche → Tengboche (3,860 m) – ~5 hours', 'Balcony trail with views over the Imja valley; visit Tengboche Monastery.'],
+                            ['Tengboche → Dingboche (4,410 m) – ~6 hours', 'Descend to Debuche, cross Imja River, then climb to fields and lodges of Dingboche.'],
+                            ['Acclimatization at Dingboche', 'Hike Nangkartshang Peak (5,083 m) for Makalu and Imja Valley panoramas.'],
+                            ['Dingboche → Lobuche (4,910 m) – ~5 hours', 'Pass the memorials at Thukla and traverse the Khumbu Glacier moraines to Lobuche.'],
+                            ['Lobuche → Gorak Shep & Everest Base Camp (5,364 m) – ~8 hours', 'Reach EBC along the glacier margins, then return to Gorak Shep for the night.'],
+                            ['Kala Patthar (5,545 m) → Pheriche (4,240 m) – ~7 hours', 'Pre-dawn climb for 360° sunrise of Everest region; descend to Pheriche.'],
+                            ['Pheriche → Namche Bazaar – ~6 hours', 'Retrace via Pangboche and Tengboche to Namche.'],
+                            ['Namche → Lukla – ~7 hours', 'Final day across bridges and forest to Lukla; celebrate with the crew.'],
+                            ['Fly Lukla → Kathmandu', 'Morning flight; free time for rest and shopping. Accommodation: Hotel in Kathmandu.'],
+                            ['Final Departure', 'Transfer to the airport for your onward journey.'],
+                          ].map((it, i) => (
+                            <div key={`rest-${i}`} className="relative pl-14">
+                              <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">{i + 3}</span></div>
+                              <h4 className="font-bold text-lg mb-1 text-foreground">{it[0]}</h4>
+                              <p className="text-muted-foreground">{it[1]}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </details>
                 </div>
               </div>
             </div>

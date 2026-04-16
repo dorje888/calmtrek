@@ -157,9 +157,15 @@ const PikeyPeak = () => {
                   </div>
 
                   <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">2–3</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Trek through Sherpa villages to reach Pikey area</h3>
-                    <p className="text-muted-foreground">Follow scenic trails through rhododendron forests with gradual ascent, staying in comfortable lodges.</p>
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">2</span></div>
+                    <h3 className="font-bold text-xl mb-2 text-foreground">Drive to the trailhead; begin trek</h3>
+                    <p className="text-muted-foreground">Drive out of Kathmandu into Solu, then start walking on quiet village trails through terraced hillsides.</p>
+                  </div>
+
+                  <div className="relative pl-14">
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">3</span></div>
+                    <h3 className="font-bold text-xl mb-2 text-foreground">Trek through Sherpa villages to reach the Pikey area</h3>
+                    <p className="text-muted-foreground">Follow scenic trails through rhododendron forests with a steady ascent; overnight in a lodge near the ridge.</p>
                   </div>
 
                   <div className="relative pl-14">
@@ -169,9 +175,15 @@ const PikeyPeak = () => {
                   </div>
 
                   <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5–6</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Return trek and transfer back to Kathmandu or Pokhara</h3>
-                    <p className="text-muted-foreground">Finish the route, transfer to road/flight as per plan. Add buffer days if needed.</p>
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div>
+                    <h3 className="font-bold text-xl mb-2 text-foreground">Descend and finish the trek</h3>
+                    <p className="text-muted-foreground">Walk down through forests and farms to the roadhead; celebrate the final night with the crew.</p>
+                  </div>
+
+                  <div className="relative pl-14">
+                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div>
+                    <h3 className="font-bold text-xl mb-2 text-foreground">Return transfer back to Kathmandu (or Pokhara if planned)</h3>
+                    <p className="text-muted-foreground">Drive back to the city. Add a spare day for flexibility if you prefer a slower pace.</p>
                   </div>
                 </div>
               </div>

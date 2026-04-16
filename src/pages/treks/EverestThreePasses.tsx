@@ -148,41 +148,136 @@ const EverestThreePasses = () => {
                     <p className="text-muted-foreground">Short, scenic flight to Lukla and gentle walk to Phakding to begin the trek.</p>
                   </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">3–5</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Namche Bazaar and acclimatisation</h3>
-                    <p className="text-muted-foreground">Progress to Namche with acclimatisation day for hikes to nearby viewpoints and markets.</p>
-                  </div>
+                  <details className="group rounded-xl border border-border/60 bg-white/70 overflow-hidden">
+                    <summary className="list-none cursor-pointer select-none px-5 py-4 flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="font-bold text-xl text-foreground">Itinerary — expand day-by-day</h3>
+                        <p className="text-muted-foreground text-sm">Tap to show all steps (reduces page length).</p>
+                      </div>
+                      <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-mountain-100 text-mountain-700 font-bold group-open:rotate-180 transition">⌄</span>
+                    </summary>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6–9</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Gokyo Valley approach & Renjo La option</h3>
-                    <p className="text-muted-foreground">Ascend into Gokyo Valley, optional Renjo La crossing to reach Gokyo lakes and viewpoints.</p>
-                  </div>
+                    <div className="px-5 pb-5">
+                      <div className="relative">
+                        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border" aria-hidden="true"></div>
+                        <div className="space-y-8" aria-label="Everest Three Passes daily itinerary (expanded)">
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">3</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Trek to Namche Bazaar</h4>
+                            <p className="text-muted-foreground">Continue up the Dudh Koshi valley to Namche, the Sherpa hub of Khumbu.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">10–12</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Cross Cho La (5,420 m) and traverse towards Everest EBC trail</h3>
-                    <p className="text-muted-foreground">Technical pass crossing with glacier sections; descend to classic EBC villages like Dzongla and Lobuche.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Acclimatisation day in Namche</h4>
+                            <p className="text-muted-foreground">Rest + hike to viewpoints (e.g., Everest View Hotel / Khumjung) and explore markets.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">13</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Kongma La (5,535 m) option and summit viewpoints</h3>
-                    <p className="text-muted-foreground">Final high pass option offering panoramic views; acclimatisation and careful glacier travel as needed.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Namche → Dole / Machhermo (Gokyo approach)</h4>
+                            <p className="text-muted-foreground">Leave the main EBC trail and begin the quieter Gokyo Valley approach through forests and villages.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">14–18</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Descend via Everest Base Camp route and return to Lukla</h3>
-                    <p className="text-muted-foreground">Pass through Periche, Dingboche and Namche, then trek back to Lukla for flight to Kathmandu.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Continue up Gokyo Valley</h4>
+                            <p className="text-muted-foreground">Gain altitude steadily with great views of Cho Oyu and surrounding peaks.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">19–21</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Buffer days & return to Kathmandu</h3>
-                    <p className="text-muted-foreground">Extra days for weather delays, acclimatisation or optional extensions in the Khumbu region.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Arrive Gokyo Lakes</h4>
+                            <p className="text-muted-foreground">Reach the turquoise lakes and settle into Gokyo village.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Gokyo Ri / acclimatisation</h4>
+                            <p className="text-muted-foreground">Optional sunrise hike for one of the best panoramas in the region; rest and hydrate.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Renjo La option / reposition for Cho La</h4>
+                            <p className="text-muted-foreground">Either cross Renjo La for expansive views or position towards Thagnak for the Cho La crossing.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">10</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Approach Cho La</h4>
+                            <p className="text-muted-foreground">Shorter day to prepare for the pass; check conditions and start early next morning.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">11</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Cross Cho La (5,420 m) → Dzongla</h4>
+                            <p className="text-muted-foreground">Glacier sections can be icy; careful footing and steady pacing.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">12</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Join the classic EBC trail (Lobuche / Gorak Shep)</h4>
+                            <p className="text-muted-foreground">Reconnect with the main route and continue towards EBC villages.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">13</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Kongma La (5,535 m) option and viewpoints</h4>
+                            <p className="text-muted-foreground">Final high pass option offering panoramic views; acclimatisation and careful glacier travel as needed.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">14</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Everest Base Camp / Kala Patthar options</h4>
+                            <p className="text-muted-foreground">Visit EBC (seasonal) and/or hike Kala Patthar for classic Everest views.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">15</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Begin descent (Pheriche / Dingboche)</h4>
+                            <p className="text-muted-foreground">Drop altitude steadily; keep an easy pace to support recovery.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">16</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Trek back through Pangboche / Tengboche area</h4>
+                            <p className="text-muted-foreground">Revisit monasteries and scenic ridgelines on the way down the valley.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">17</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Return to Namche</h4>
+                            <p className="text-muted-foreground">Final night in Namche; hot shower and bakery stop recommended.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">18</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Namche → Lukla</h4>
+                            <p className="text-muted-foreground">Finish the trek and prepare for the flight out.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">19</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Fly to Kathmandu</h4>
+                            <p className="text-muted-foreground">Morning flight (weather permitting) and transfer to your hotel.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">20</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Buffer / contingency day</h4>
+                            <p className="text-muted-foreground">Extra day for flight delays, weather, or rest.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">21</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Departure / optional city tour</h4>
+                            <p className="text-muted-foreground">If time allows, explore Kathmandu before departure.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
                 </div>
               </div>
             </div>

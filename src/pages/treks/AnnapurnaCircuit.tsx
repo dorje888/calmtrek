@@ -191,41 +191,112 @@ const AnnapurnaCircuit = () => {
                     <p className="text-muted-foreground">Begin trekking through villages and terraced fields towards the foothills.</p>
                   </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4–6</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Progress towards Manang with acclimatisation days</h3>
-                    <p className="text-muted-foreground">Slow ascent with acclimatisation in Manang; short hikes to viewpoints.</p>
-                  </div>
+                  <details className="group rounded-xl border border-border/60 bg-white/70 overflow-hidden">
+                    <summary className="list-none cursor-pointer select-none px-5 py-4 flex items-center justify-between gap-4">
+                      <div>
+                        <h3 className="font-bold text-xl text-foreground">Itinerary — expand day-by-day</h3>
+                        <p className="text-muted-foreground text-sm">Tap to show remaining days (reduces page length).</p>
+                      </div>
+                      <span className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full bg-mountain-100 text-mountain-700 font-bold group-open:rotate-180 transition">⌄</span>
+                    </summary>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Approach to Thorong Phedi / High camp</h3>
-                    <p className="text-muted-foreground">Prepare for the pass; shorter day to conserve energy.</p>
-                  </div>
+                    <div className="px-5 pb-5">
+                      <div className="relative">
+                        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-border" aria-hidden="true"></div>
+                        <div className="space-y-8" aria-label="Annapurna Circuit daily itinerary (expanded)">
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">4</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Trek deeper into the Marsyangdi Valley</h4>
+                            <p className="text-muted-foreground">Walk through villages and terraced fields with a steady gain in altitude.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Cross Thorong La (5,416 m) and descend to Muktinath</h3>
-                    <p className="text-muted-foreground">Early start for pass crossing and cultural visit at Muktinath.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">5</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Continue towards Manang region</h4>
+                            <p className="text-muted-foreground">Scenery becomes more alpine; the air drier as you approach the high valley.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9–11</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Descend through Jomsom and Tibetan‑influenced valleys</h3>
-                    <p className="text-muted-foreground">Walk through Mustang‑like landscapes, optional flight from Jomsom to Pokhara.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">6</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Acclimatisation day in/around Manang</h4>
+                            <p className="text-muted-foreground">Short hikes to viewpoints (e.g., Gangapurna Lake / Ice Lake area) and rest for Thorong La.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">12–14</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Complete descent, return to Pokhara and transfer to Kathmandu</h3>
-                    <p className="text-muted-foreground">Final walking days and road/air transfer back to Kathmandu.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">7</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Approach to Thorong Phedi / High Camp</h4>
+                            <p className="text-muted-foreground">Prepare for the pass; keep the day shorter to conserve energy.</p>
+                          </div>
 
-                  <div className="relative pl-14">
-                    <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">15–18</span></div>
-                    <h3 className="font-bold text-xl mb-2 text-foreground">Buffer/extension days</h3>
-                    <p className="text-muted-foreground">Optional Tilicho Lake, Poon Hill extension, rest days or cultural excursions.</p>
-                  </div>
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">8</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Cross Thorong La (5,416 m) and descend to Muktinath</h4>
+                            <p className="text-muted-foreground">Early start for the pass crossing; time for a cultural visit at Muktinath.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">9</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Descend into the Kali Gandaki valley</h4>
+                            <p className="text-muted-foreground">Head down toward Kagbeni/Jomsom area through wind‑sculpted, Mustang‑like landscapes.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">10</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Explore Jomsom region (or optional flight)</h4>
+                            <p className="text-muted-foreground">Continue walking the valley floor, or fly Jomsom → Pokhara if you prefer a shorter finish.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">11</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Final valley day and wrap-up</h4>
+                            <p className="text-muted-foreground">One more walking day through Tibetan‑influenced villages before exiting the trail.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">12</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Return to Pokhara</h4>
+                            <p className="text-muted-foreground">Drive/transfer back to Pokhara; rest by Phewa Lake.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">13</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Transfer to Kathmandu</h4>
+                            <p className="text-muted-foreground">Road or flight back to Kathmandu; free evening for dinner and shopping.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">14</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Trip concludes / optional city time</h4>
+                            <p className="text-muted-foreground">Departure day or optional sightseeing in Kathmandu depending on schedule.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">15</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Buffer/extension day</h4>
+                            <p className="text-muted-foreground">Use as contingency or a planned extension day.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">16</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Optional Tilicho Lake add‑on</h4>
+                            <p className="text-muted-foreground">Popular side trip for high‑alpine scenery (adds days depending on route).</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">17</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Optional cultural / rest day</h4>
+                            <p className="text-muted-foreground">Extra day for flexibility, weather, or a slower pace.</p>
+                          </div>
+
+                          <div className="relative pl-14">
+                            <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-mountain-100 flex items-center justify-center z-10"><span className="font-bold text-mountain-700">18</span></div>
+                            <h4 className="font-bold text-lg mb-1 text-foreground">Optional short trek extension (e.g., Poon Hill)</h4>
+                            <p className="text-muted-foreground">Add a classic sunrise viewpoint trek if you want more walking after the circuit.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </details>
                 </div>
               </div>
             </div>
